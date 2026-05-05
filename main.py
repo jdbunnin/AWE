@@ -24,6 +24,9 @@ def save_signups(signups):
 @app.route('/')
 def index():
     return send_from_directory('.', 'index.html')
+@app.route('/deck')
+def deck():
+    return send_from_directory('.', 'deck.html')
 
 
 @app.route('/api/signup', methods=['POST'])
