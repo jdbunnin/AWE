@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awe — The Opposite of Doomscrolling</title>
+<meta name="description" content="90 seconds of scientifically-designed awe. Every night. Coming soon.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow-x:hidden}
+.stars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.3}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--duration) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
+.container{position:relative;z-index:1;max-width:680px;padding:40px 24px;text-align:center}
+.glow{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.15) 0%,transparent 70%);position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:0}
+.badge{display:inline-block;padding:6px 16px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:20px;font-size:12px;color:#f59e0b;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:32px}
+h1{font-size:clamp(36px,8vw,64px);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-2px;background:linear-gradient(135deg,#ffffff 0%,#a0a0a0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h1 span{background:linear-gradient(135deg,#f59e0b 0%,#f97316 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{font-size:clamp(16px,3vw,22px);font-weight:300;color:#808080;line-height:1.6;margin-bottom:16px;max-width:500px;margin-left:auto;margin-right:auto}
+.science{font-size:14px;color:#505050;line-height:1.7;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+.science strong{color:#707070}
+.form-container{margin-bottom:32px}
+.form-row{display:flex;gap:8px;max-width:420px;margin:0 auto}
+.form-row input{flex:1;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s}
+.form-row input:focus{border-color:#f59e0b}
+.form-row input::placeholder{color:#404040}
+.form-row button{padding:14px 28px;background:linear-gradient(135deg,#f59e0b,#f97316);border:none;border-radius:10px;color:#000;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:opacity 0.3s;white-space:nowrap}
+.form-row button:hover{opacity:0.85}
+.success{display:none;padding:16px 24px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);border-radius:10px;color:#4ade80;font-size:14px;font-weight:500;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.success.show{display:block}
+.counter{font-size:13px;color:#303030;margin-bottom:40px}
+.counter span{color:#505050;font-weight:600}
+.features{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.feature{display:flex;align-items:center;gap:8px;font-size:13px;color:#404040}
+.feature-dot{width:6px;height:6px;border-radius:50%;background:#f59e0b}
+.bottom{font-size:12px;color:#252525;padding-top:40px;border-top:1px solid #111;width:100%;text-align:center}
+.bottom a{color:#404040;text-decoration:none}
+@media(max-width:480px){.form-row{flex-direction:column}.form-row button{width:100%}.features{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+<div class="glow"></div>
+
+<div class="badge">Coming Soon</div>
+
+<h1>The opposite of <span>doomscrolling.</span></h1>
+
+<div class="sub">90 seconds of awe. Every night.<br>Designed by neuroscientists.</div>
+
+<div class="science">
+<strong>20 years of research</strong> shows awe reduces anxiety, improves sleep, and makes you kinder. We're building the first app that delivers it on demand.
+</div>
+
+<div class="form-container">
+<div class="success" id="success">You're in. We'll let you know when it's ready. ✨</div>
+<div class="form-row" id="formRow">
+<input type="email" id="email" placeholder="Enter your email" required>
+<button onclick="submitEmail()">Join Waitlist</button>
+</div>
+</div>
+
+<div class="counter" id="counter"></div>
+
+<div class="features">
+<div class="feature"><div class="feature-dot"></div>Not meditation</div>
+<div class="feature"><div class="feature-dot"></div>Just watch & listen</div>
+<div class="feature"><div class="feature-dot"></div>Science-backed</div>
+<div class="feature"><div class="feature-dot"></div>Personalized</div>
+</div>
+
+<div class="bottom">
+Built on awe research from UC Berkeley.<br>
+<span style="margin-top:8px;display:block;font-size:11px;color:#1a1a1a">© 2025 Awe</span>
+</div>
+
+</div>
+
+<script>
+// Stars background
+var starsEl = document.getElementById('stars');
+for(var i=0;i<80;i++){
+var star=document.createElement('div');
+star.className='star';
+var size=Math.random()*2+1;
+star.style.width=size+'px';
+star.style.height=size+'px';
+star.style.left=Math.random()*100+'%';
+star.style.top=Math.random()*100+'%';
+star.style.setProperty('--duration',(Math.random()*3+2)+'s');
+star.style.animationDelay=Math.random()*5+'s';
+starsEl.appendChild(star);
+}
+
+// Email storage (using localStorage for now — upgrade to real backend later)
+var emails = JSON.parse(localStorage.getItem('awe_waitlist') || '[]');
+updateCounter();
+
+function submitEmail(){
+var input=document.getElementById('email');
+var email=input.value.trim();
+if(!email||!email.includes('@')){input.style.borderColor='#f87171';return}
+
+// Store locally
+if(emails.indexOf(email)===-1){emails.push(email)}
+localStorage.setItem('awe_waitlist',JSON.stringify(emails));
+
+// Also send to a Google Form (optional — set up later)
+// For now just store locally
+
+document.getElementById('formRow').style.display='none';
+document.getElementById('success').classList.add('show');
+updateCounter();
+
+// Try to send to backend if available
+try{
+fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+}catch(e){}
+}
+
+function updateCounter(){
+if(emails.length>3){
+document.getElementById('counter').innerHTML='<span>'+emails.length+'</span> people on the waitlist';
+}
+}
+
+// Enter key
+document.getElementById('email').addEventListener('keypress',function(e){if(e.key==='Enter')submitEmail()});
+</script>
+
+</body>
+</html>
