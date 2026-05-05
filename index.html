@@ -18,13 +18,13 @@ body{
   overflow-x:hidden;
 }
 
-/* Animated space background */
+/* Space background */
 .space{
   position:fixed;
   top:0;left:0;
   width:100%;height:100%;
   z-index:0;
-  background:radial-gradient(ellipse at 20% 50%, rgba(10,5,30,1) 0%, rgba(0,0,0,1) 100%);
+  background:radial-gradient(ellipse at 20% 50%, rgba(8,8,20,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 .nebula{
@@ -32,19 +32,18 @@ body{
   border-radius:50%;
   filter:blur(80px);
   animation:drift 20s ease-in-out infinite;
-  opacity:0.15;
 }
 
 .nebula-1{
   width:600px;height:600px;
-  background:radial-gradient(circle, rgba(139,92,246,0.5), transparent);
+  background:radial-gradient(circle, rgba(100,100,180,0.12), transparent);
   top:-10%;left:-10%;
   animation-duration:25s;
 }
 
 .nebula-2{
   width:500px;height:500px;
-  background:radial-gradient(circle, rgba(245,158,11,0.4), transparent);
+  background:radial-gradient(circle, rgba(180,180,220,0.08), transparent);
   bottom:-10%;right:-10%;
   animation-duration:30s;
   animation-delay:5s;
@@ -52,7 +51,7 @@ body{
 
 .nebula-3{
   width:400px;height:400px;
-  background:radial-gradient(circle, rgba(59,130,246,0.3), transparent);
+  background:radial-gradient(circle, rgba(120,120,200,0.08), transparent);
   top:40%;left:60%;
   animation-duration:22s;
   animation-delay:10s;
@@ -85,50 +84,48 @@ body{
 }
 
 @keyframes twinkle{
-  0%,100%{opacity:0.1;transform:scale(0.8)}
-  50%{opacity:1;transform:scale(1.2)}
+  0%,100%{opacity:0.15;transform:scale(0.8)}
+  50%{opacity:0.9;transform:scale(1.2)}
 }
 
-/* Shooting star */
+/* Shooting stars */
 .shooting-star{
   position:fixed;
-  width:100px;height:1px;
-  background:linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+  width:120px;height:1px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.7), transparent);
   z-index:2;
   opacity:0;
-  animation:shoot 3s ease-out infinite;
 }
 
 .shooting-star:nth-child(1){
   top:20%;left:70%;
-  animation-delay:2s;
+  animation:shoot 4s ease-out infinite 3s;
   transform:rotate(-35deg);
 }
 
 .shooting-star:nth-child(2){
-  top:40%;left:30%;
-  animation-delay:7s;
+  top:45%;left:20%;
+  animation:shoot 4s ease-out infinite 9s;
   transform:rotate(-25deg);
 }
 
 .shooting-star:nth-child(3){
-  top:15%;left:50%;
-  animation-delay:12s;
+  top:12%;left:45%;
+  animation:shoot 4s ease-out infinite 15s;
   transform:rotate(-40deg);
 }
 
 @keyframes shoot{
   0%{opacity:0;transform:translateX(0) rotate(-35deg)}
-  5%{opacity:1}
-  15%{opacity:0;transform:translateX(-300px) rotate(-35deg)}
+  5%{opacity:0.8}
+  15%{opacity:0;transform:translateX(-350px) rotate(-35deg)}
   100%{opacity:0}
 }
 
 /* Floating particles */
 .particle{
   position:fixed;
-  width:2px;height:2px;
-  background:rgba(245,158,11,0.6);
+  background:rgba(200,200,255,0.4);
   border-radius:50%;
   z-index:2;
   animation:float-up var(--duration) ease-in infinite;
@@ -138,12 +135,12 @@ body{
 
 @keyframes float-up{
   0%{opacity:0;transform:translateY(0)}
-  10%{opacity:0.6}
-  90%{opacity:0.2}
+  10%{opacity:0.4}
+  90%{opacity:0.1}
   100%{opacity:0;transform:translateY(-100vh)}
 }
 
-/* Main content */
+/* Main */
 .main{
   position:relative;
   z-index:10;
@@ -156,122 +153,123 @@ body{
 }
 
 .content{
-  max-width:700px;
+  max-width:720px;
   text-align:center;
-  animation:fadeInUp 1.5s ease;
+  animation:fadeUp 1.5s ease;
 }
 
-@keyframes fadeInUp{
+@keyframes fadeUp{
   0%{opacity:0;transform:translateY(30px)}
   100%{opacity:1;transform:translateY(0)}
 }
 
-/* Logo/icon */
+/* Icon */
 .icon{
-  width:60px;height:60px;
-  margin:0 auto 32px;
+  width:56px;height:56px;
+  margin:0 auto 28px;
   border-radius:50%;
-  background:radial-gradient(circle, rgba(245,158,11,0.3), transparent);
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
   display:flex;align-items:center;justify-content:center;
-  font-size:28px;
-  animation:pulse-glow 3s ease-in-out infinite;
-  border:1px solid rgba(245,158,11,0.2);
+  font-size:24px;
+  animation:glow 3s ease-in-out infinite;
 }
 
-@keyframes pulse-glow{
-  0%,100%{box-shadow:0 0 20px rgba(245,158,11,0.1)}
-  50%{box-shadow:0 0 40px rgba(245,158,11,0.25)}
+@keyframes glow{
+  0%,100%{box-shadow:0 0 15px rgba(255,255,255,0.03)}
+  50%{box-shadow:0 0 30px rgba(255,255,255,0.08)}
 }
 
+/* Badge */
 .badge{
   display:inline-block;
   padding:6px 18px;
-  background:rgba(245,158,11,0.08);
-  border:1px solid rgba(245,158,11,0.2);
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
   border-radius:20px;
   font-size:11px;
-  color:#f59e0b;
+  color:#909090;
   font-weight:600;
   letter-spacing:2px;
   text-transform:uppercase;
   margin-bottom:36px;
-  animation:fadeInUp 1.5s ease 0.2s both;
+  animation:fadeUp 1.5s ease 0.2s both;
 }
 
+/* Headline */
 h1{
   font-size:clamp(40px,9vw,72px);
   font-weight:800;
   line-height:1.05;
-  margin-bottom:24px;
+  margin-bottom:28px;
   letter-spacing:-3px;
-  animation:fadeInUp 1.5s ease 0.4s both;
+  animation:fadeUp 1.5s ease 0.4s both;
 }
 
 h1 .line1{
   display:block;
-  background:linear-gradient(135deg,#ffffff 0%,#c0c0c0 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
+  color:#ffffff;
 }
 
 h1 .line2{
   display:block;
-  background:linear-gradient(135deg,#f59e0b 0%,#f97316 50%,#ef4444 100%);
+  background:linear-gradient(135deg,#e0e0e0 0%,#ffffff 50%,#c0c0c0 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   background-clip:text;
 }
 
+/* Subtitle */
 .sub{
   font-size:clamp(18px,3.5vw,24px);
   font-weight:300;
-  color:#707070;
+  color:#b0b0b0;
   line-height:1.6;
   margin-bottom:20px;
-  animation:fadeInUp 1.5s ease 0.6s both;
+  animation:fadeUp 1.5s ease 0.6s both;
 }
 
 .sub strong{
-  color:#a0a0a0;
-  font-weight:400;
+  color:#e0e0e0;
+  font-weight:500;
 }
 
+/* Science text */
 .science{
-  font-size:15px;
-  color:#404040;
+  font-size:16px;
+  color:#909090;
   line-height:1.8;
   margin-bottom:48px;
-  max-width:520px;
+  max-width:540px;
   margin-left:auto;
   margin-right:auto;
-  animation:fadeInUp 1.5s ease 0.8s both;
+  animation:fadeUp 1.5s ease 0.8s both;
 }
 
 .science em{
-  color:#606060;
+  color:#c0c0c0;
   font-style:normal;
   font-weight:500;
 }
 
-/* Email form */
+/* Form */
 .form-container{
-  margin-bottom:32px;
-  animation:fadeInUp 1.5s ease 1s both;
+  margin-bottom:28px;
+  animation:fadeUp 1.5s ease 1s both;
 }
 
 .form-row{
   display:flex;
   gap:8px;
-  max-width:440px;
+  max-width:460px;
   margin:0 auto;
 }
 
 .form-row input{
   flex:1;
   padding:16px 20px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
   border-radius:12px;
   color:#fff;
   font-size:15px;
@@ -281,16 +279,16 @@ h1 .line2{
 }
 
 .form-row input:focus{
-  border-color:rgba(245,158,11,0.5);
-  background:rgba(255,255,255,0.06);
-  box-shadow:0 0 20px rgba(245,158,11,0.1);
+  border-color:rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.07);
+  box-shadow:0 0 20px rgba(255,255,255,0.05);
 }
 
-.form-row input::placeholder{color:#303030}
+.form-row input::placeholder{color:#505050}
 
 .form-row button{
   padding:16px 32px;
-  background:linear-gradient(135deg,#f59e0b,#f97316);
+  background:#fff;
   border:none;
   border-radius:12px;
   color:#000;
@@ -304,134 +302,137 @@ h1 .line2{
 
 .form-row button:hover{
   transform:translateY(-1px);
-  box-shadow:0 8px 30px rgba(245,158,11,0.3);
+  box-shadow:0 8px 30px rgba(255,255,255,0.15);
 }
 
+/* Success */
 .success{
   display:none;
   padding:18px 28px;
-  background:rgba(74,222,128,0.06);
-  border:1px solid rgba(74,222,128,0.15);
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
   border-radius:12px;
-  color:#4ade80;
+  color:#e0e0e0;
   font-size:15px;
   font-weight:500;
-  max-width:440px;
+  max-width:460px;
   margin:0 auto 24px;
-  animation:fadeInUp 0.5s ease;
+  animation:fadeUp 0.5s ease;
 }
 
 .success.show{display:block}
 
+/* Counter */
 .counter{
   font-size:13px;
-  color:#252525;
+  color:#505050;
   margin-bottom:48px;
-  animation:fadeInUp 1.5s ease 1.2s both;
+  animation:fadeUp 1.5s ease 1.2s both;
 }
 
-.counter span{color:#404040;font-weight:600}
+.counter span{color:#808080;font-weight:600}
 
 /* Features */
 .features{
   display:flex;
-  gap:32px;
+  gap:36px;
   justify-content:center;
   flex-wrap:wrap;
   margin-bottom:48px;
-  animation:fadeInUp 1.5s ease 1.4s both;
+  animation:fadeUp 1.5s ease 1.4s both;
 }
 
 .feature{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:8px;
+  gap:10px;
 }
 
 .feature-icon{
-  width:44px;height:44px;
-  border-radius:12px;
+  width:48px;height:48px;
+  border-radius:14px;
   display:flex;align-items:center;justify-content:center;
-  font-size:18px;
+  font-size:20px;
   background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.07);
+  transition:all 0.3s;
+}
+
+.feature:hover .feature-icon{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(255,255,255,0.15);
+  transform:translateY(-2px);
 }
 
 .feature-text{
-  font-size:12px;
-  color:#404040;
+  font-size:13px;
+  color:#808080;
   font-weight:500;
-  letter-spacing:0.5px;
 }
 
 /* Quote */
 .quote{
-  max-width:500px;
+  max-width:520px;
   margin:0 auto 48px;
-  padding:24px 32px;
+  padding:28px 36px;
   background:rgba(255,255,255,0.02);
-  border-left:2px solid rgba(245,158,11,0.3);
+  border-left:2px solid rgba(255,255,255,0.15);
   border-radius:0 12px 12px 0;
-  animation:fadeInUp 1.5s ease 1.6s both;
+  animation:fadeUp 1.5s ease 1.6s both;
 }
 
 .quote-text{
-  font-size:16px;
-  color:#505050;
+  font-size:17px;
+  color:#909090;
   font-style:italic;
   line-height:1.7;
-  margin-bottom:8px;
+  margin-bottom:12px;
 }
 
 .quote-source{
-  font-size:12px;
-  color:#303030;
+  font-size:13px;
+  color:#606060;
 }
 
 /* Bottom */
 .bottom{
-  font-size:12px;
-  color:#1a1a1a;
+  font-size:13px;
+  color:#404040;
   padding-top:40px;
-  border-top:1px solid #0a0a0a;
+  border-top:1px solid rgba(255,255,255,0.04);
   width:100%;
   text-align:center;
-  animation:fadeInUp 1.5s ease 1.8s both;
+  animation:fadeUp 1.5s ease 1.8s both;
 }
 
-.bottom span{color:#252525}
+.bottom span{color:#606060}
 
-/* Responsive */
 @media(max-width:480px){
   .form-row{flex-direction:column}
   .form-row button{width:100%}
-  .features{gap:20px}
+  .features{gap:24px}
   h1{letter-spacing:-2px}
+  .quote{padding:20px 24px}
 }
 </style>
 </head>
 <body>
 
-<!-- Animated space background -->
 <div class="space">
   <div class="nebula nebula-1"></div>
   <div class="nebula nebula-2"></div>
   <div class="nebula nebula-3"></div>
 </div>
 
-<!-- Stars -->
 <div class="stars-container" id="stars"></div>
 
-<!-- Shooting stars -->
 <div class="shooting-star"></div>
 <div class="shooting-star"></div>
 <div class="shooting-star"></div>
 
-<!-- Floating particles -->
 <div id="particles"></div>
 
-<!-- Main content -->
 <div class="main">
 <div class="content">
 
@@ -450,14 +451,14 @@ h1 .line2{
   </div>
 
   <div class="science">
-    <em>20 years of research</em> shows awe reduces anxiety, 
-    improves sleep, and makes you kinder. We're building 
+    <em>20 years of research</em> shows awe reduces anxiety,
+    improves sleep, and makes you kinder. We're building
     the first app that delivers it on demand.
   </div>
 
   <div class="form-container">
     <div class="success" id="success">
-      You're in. We'll let you know when it's ready. ✨
+      You're in. We'll let you know when it's ready. ✦
     </div>
     <div class="form-row" id="formRow">
       <input type="email" id="email" placeholder="Enter your email" required>
@@ -482,14 +483,14 @@ h1 .line2{
     </div>
     <div class="feature">
       <div class="feature-icon">✨</div>
-      <div class="feature-text">Personalized</div>
+      <div class="feature-text">Personalized to you</div>
     </div>
   </div>
 
   <div class="quote">
     <div class="quote-text">
-      "Awe is the feeling of being in the presence of 
-      something vast that transcends your understanding 
+      "Awe is the feeling of being in the presence of
+      something vast that transcends your understanding
       of the world."
     </div>
     <div class="quote-source">
@@ -499,7 +500,7 @@ h1 .line2{
 
   <div class="bottom">
     Built on awe research from <span>UC Berkeley</span>.<br>
-    <span style="margin-top:8px;display:block;font-size:11px;color:#111">
+    <span style="margin-top:8px;display:block;font-size:11px">
       © 2025 Awe
     </span>
   </div>
@@ -508,7 +509,7 @@ h1 .line2{
 </div>
 
 <script>
-// Generate stars
+// Stars
 var starsEl = document.getElementById('stars');
 for(var i = 0; i < 150; i++){
   var star = document.createElement('div');
@@ -523,22 +524,22 @@ for(var i = 0; i < 150; i++){
   starsEl.appendChild(star);
 }
 
-// Generate floating particles
+// Particles
 var particlesEl = document.getElementById('particles');
-for(var i = 0; i < 20; i++){
+for(var i = 0; i < 15; i++){
   var p = document.createElement('div');
   p.className = 'particle';
   p.style.left = Math.random() * 100 + '%';
   p.style.bottom = '-5px';
-  p.style.setProperty('--duration', (Math.random() * 15 + 10) + 's');
+  p.style.setProperty('--duration', (Math.random() * 18 + 12) + 's');
   p.style.setProperty('--delay', (Math.random() * 20) + 's');
-  var pSize = Math.random() * 3 + 1;
+  var pSize = Math.random() * 2 + 1;
   p.style.width = pSize + 'px';
   p.style.height = pSize + 'px';
   particlesEl.appendChild(p);
 }
 
-// Email handling
+// Email
 var emails = JSON.parse(localStorage.getItem('awe_waitlist') || '[]');
 updateCounter();
 
@@ -546,22 +547,19 @@ function submitEmail(){
   var input = document.getElementById('email');
   var email = input.value.trim();
   if(!email || !email.includes('@') || !email.includes('.')){
-    input.style.borderColor = 'rgba(248,113,113,0.5)';
-    input.style.boxShadow = '0 0 20px rgba(248,113,113,0.1)';
+    input.style.borderColor = 'rgba(255,100,100,0.4)';
+    input.style.boxShadow = '0 0 15px rgba(255,100,100,0.08)';
     setTimeout(function(){
-      input.style.borderColor = 'rgba(255,255,255,0.08)';
+      input.style.borderColor = 'rgba(255,255,255,0.12)';
       input.style.boxShadow = 'none';
     }, 2000);
     return;
   }
-
   if(emails.indexOf(email) === -1){ emails.push(email); }
   localStorage.setItem('awe_waitlist', JSON.stringify(emails));
-
   document.getElementById('formRow').style.display = 'none';
   document.getElementById('success').classList.add('show');
   updateCounter();
-
   try{
     fetch('/api/signup', {
       method: 'POST',
@@ -582,13 +580,13 @@ document.getElementById('email').addEventListener('keypress', function(e){
   if(e.key === 'Enter') submitEmail();
 });
 
-// Parallax effect on mouse move
+// Parallax
 document.addEventListener('mousemove', function(e){
-  var x = (e.clientX / window.innerWidth - 0.5) * 10;
-  var y = (e.clientY / window.innerHeight - 0.5) * 10;
+  var x = (e.clientX / window.innerWidth - 0.5) * 8;
+  var y = (e.clientY / window.innerHeight - 0.5) * 8;
   var nebulas = document.querySelectorAll('.nebula');
   nebulas.forEach(function(n, i){
-    var speed = (i + 1) * 0.5;
+    var speed = (i + 1) * 0.4;
     n.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
   });
 });
