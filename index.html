@@ -7,129 +7,591 @@
 <meta name="description" content="90 seconds of scientifically-designed awe. Every night. Coming soon.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow-x:hidden}
-.stars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.3}
-.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--duration) ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
-.container{position:relative;z-index:1;max-width:680px;padding:40px 24px;text-align:center}
-.glow{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.15) 0%,transparent 70%);position:absolute;top:-100px;left:50%;transform:translateX(-50%);z-index:0}
-.badge{display:inline-block;padding:6px 16px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:20px;font-size:12px;color:#f59e0b;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:32px}
-h1{font-size:clamp(36px,8vw,64px);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-2px;background:linear-gradient(135deg,#ffffff 0%,#a0a0a0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-h1 span{background:linear-gradient(135deg,#f59e0b 0%,#f97316 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sub{font-size:clamp(16px,3vw,22px);font-weight:300;color:#808080;line-height:1.6;margin-bottom:16px;max-width:500px;margin-left:auto;margin-right:auto}
-.science{font-size:14px;color:#505050;line-height:1.7;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
-.science strong{color:#707070}
-.form-container{margin-bottom:32px}
-.form-row{display:flex;gap:8px;max-width:420px;margin:0 auto}
-.form-row input{flex:1;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s}
-.form-row input:focus{border-color:#f59e0b}
-.form-row input::placeholder{color:#404040}
-.form-row button{padding:14px 28px;background:linear-gradient(135deg,#f59e0b,#f97316);border:none;border-radius:10px;color:#000;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:opacity 0.3s;white-space:nowrap}
-.form-row button:hover{opacity:0.85}
-.success{display:none;padding:16px 24px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);border-radius:10px;color:#4ade80;font-size:14px;font-weight:500;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#000;
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Animated space background */
+.space{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  z-index:0;
+  background:radial-gradient(ellipse at 20% 50%, rgba(10,5,30,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.nebula{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  animation:drift 20s ease-in-out infinite;
+  opacity:0.15;
+}
+
+.nebula-1{
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(139,92,246,0.5), transparent);
+  top:-10%;left:-10%;
+  animation-duration:25s;
+}
+
+.nebula-2{
+  width:500px;height:500px;
+  background:radial-gradient(circle, rgba(245,158,11,0.4), transparent);
+  bottom:-10%;right:-10%;
+  animation-duration:30s;
+  animation-delay:5s;
+}
+
+.nebula-3{
+  width:400px;height:400px;
+  background:radial-gradient(circle, rgba(59,130,246,0.3), transparent);
+  top:40%;left:60%;
+  animation-duration:22s;
+  animation-delay:10s;
+}
+
+@keyframes drift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(30px,-20px) scale(1.05)}
+  50%{transform:translate(-20px,30px) scale(0.95)}
+  75%{transform:translate(20px,20px) scale(1.02)}
+}
+
+/* Stars */
+.stars-container{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  z-index:1;
+}
+
+.star{
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+}
+
+.star-twinkle{
+  animation:twinkle var(--duration) ease-in-out infinite;
+  animation-delay:var(--delay);
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:0.1;transform:scale(0.8)}
+  50%{opacity:1;transform:scale(1.2)}
+}
+
+/* Shooting star */
+.shooting-star{
+  position:fixed;
+  width:100px;height:1px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+  z-index:2;
+  opacity:0;
+  animation:shoot 3s ease-out infinite;
+}
+
+.shooting-star:nth-child(1){
+  top:20%;left:70%;
+  animation-delay:2s;
+  transform:rotate(-35deg);
+}
+
+.shooting-star:nth-child(2){
+  top:40%;left:30%;
+  animation-delay:7s;
+  transform:rotate(-25deg);
+}
+
+.shooting-star:nth-child(3){
+  top:15%;left:50%;
+  animation-delay:12s;
+  transform:rotate(-40deg);
+}
+
+@keyframes shoot{
+  0%{opacity:0;transform:translateX(0) rotate(-35deg)}
+  5%{opacity:1}
+  15%{opacity:0;transform:translateX(-300px) rotate(-35deg)}
+  100%{opacity:0}
+}
+
+/* Floating particles */
+.particle{
+  position:fixed;
+  width:2px;height:2px;
+  background:rgba(245,158,11,0.6);
+  border-radius:50%;
+  z-index:2;
+  animation:float-up var(--duration) ease-in infinite;
+  animation-delay:var(--delay);
+  opacity:0;
+}
+
+@keyframes float-up{
+  0%{opacity:0;transform:translateY(0)}
+  10%{opacity:0.6}
+  90%{opacity:0.2}
+  100%{opacity:0;transform:translateY(-100vh)}
+}
+
+/* Main content */
+.main{
+  position:relative;
+  z-index:10;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+}
+
+.content{
+  max-width:700px;
+  text-align:center;
+  animation:fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp{
+  0%{opacity:0;transform:translateY(30px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+
+/* Logo/icon */
+.icon{
+  width:60px;height:60px;
+  margin:0 auto 32px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(245,158,11,0.3), transparent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+  animation:pulse-glow 3s ease-in-out infinite;
+  border:1px solid rgba(245,158,11,0.2);
+}
+
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 0 20px rgba(245,158,11,0.1)}
+  50%{box-shadow:0 0 40px rgba(245,158,11,0.25)}
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 18px;
+  background:rgba(245,158,11,0.08);
+  border:1px solid rgba(245,158,11,0.2);
+  border-radius:20px;
+  font-size:11px;
+  color:#f59e0b;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:36px;
+  animation:fadeInUp 1.5s ease 0.2s both;
+}
+
+h1{
+  font-size:clamp(40px,9vw,72px);
+  font-weight:800;
+  line-height:1.05;
+  margin-bottom:24px;
+  letter-spacing:-3px;
+  animation:fadeInUp 1.5s ease 0.4s both;
+}
+
+h1 .line1{
+  display:block;
+  background:linear-gradient(135deg,#ffffff 0%,#c0c0c0 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+h1 .line2{
+  display:block;
+  background:linear-gradient(135deg,#f59e0b 0%,#f97316 50%,#ef4444 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.sub{
+  font-size:clamp(18px,3.5vw,24px);
+  font-weight:300;
+  color:#707070;
+  line-height:1.6;
+  margin-bottom:20px;
+  animation:fadeInUp 1.5s ease 0.6s both;
+}
+
+.sub strong{
+  color:#a0a0a0;
+  font-weight:400;
+}
+
+.science{
+  font-size:15px;
+  color:#404040;
+  line-height:1.8;
+  margin-bottom:48px;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+  animation:fadeInUp 1.5s ease 0.8s both;
+}
+
+.science em{
+  color:#606060;
+  font-style:normal;
+  font-weight:500;
+}
+
+/* Email form */
+.form-container{
+  margin-bottom:32px;
+  animation:fadeInUp 1.5s ease 1s both;
+}
+
+.form-row{
+  display:flex;
+  gap:8px;
+  max-width:440px;
+  margin:0 auto;
+}
+
+.form-row input{
+  flex:1;
+  padding:16px 20px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  color:#fff;
+  font-size:15px;
+  font-family:'Inter',sans-serif;
+  outline:none;
+  transition:all 0.3s;
+}
+
+.form-row input:focus{
+  border-color:rgba(245,158,11,0.5);
+  background:rgba(255,255,255,0.06);
+  box-shadow:0 0 20px rgba(245,158,11,0.1);
+}
+
+.form-row input::placeholder{color:#303030}
+
+.form-row button{
+  padding:16px 32px;
+  background:linear-gradient(135deg,#f59e0b,#f97316);
+  border:none;
+  border-radius:12px;
+  color:#000;
+  font-size:15px;
+  font-weight:700;
+  font-family:'Inter',sans-serif;
+  cursor:pointer;
+  transition:all 0.3s;
+  white-space:nowrap;
+}
+
+.form-row button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 30px rgba(245,158,11,0.3);
+}
+
+.success{
+  display:none;
+  padding:18px 28px;
+  background:rgba(74,222,128,0.06);
+  border:1px solid rgba(74,222,128,0.15);
+  border-radius:12px;
+  color:#4ade80;
+  font-size:15px;
+  font-weight:500;
+  max-width:440px;
+  margin:0 auto 24px;
+  animation:fadeInUp 0.5s ease;
+}
+
 .success.show{display:block}
-.counter{font-size:13px;color:#303030;margin-bottom:40px}
-.counter span{color:#505050;font-weight:600}
-.features{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.feature{display:flex;align-items:center;gap:8px;font-size:13px;color:#404040}
-.feature-dot{width:6px;height:6px;border-radius:50%;background:#f59e0b}
-.bottom{font-size:12px;color:#252525;padding-top:40px;border-top:1px solid #111;width:100%;text-align:center}
-.bottom a{color:#404040;text-decoration:none}
-@media(max-width:480px){.form-row{flex-direction:column}.form-row button{width:100%}.features{flex-direction:column;align-items:center}}
+
+.counter{
+  font-size:13px;
+  color:#252525;
+  margin-bottom:48px;
+  animation:fadeInUp 1.5s ease 1.2s both;
+}
+
+.counter span{color:#404040;font-weight:600}
+
+/* Features */
+.features{
+  display:flex;
+  gap:32px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:48px;
+  animation:fadeInUp 1.5s ease 1.4s both;
+}
+
+.feature{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+
+.feature-icon{
+  width:44px;height:44px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.feature-text{
+  font-size:12px;
+  color:#404040;
+  font-weight:500;
+  letter-spacing:0.5px;
+}
+
+/* Quote */
+.quote{
+  max-width:500px;
+  margin:0 auto 48px;
+  padding:24px 32px;
+  background:rgba(255,255,255,0.02);
+  border-left:2px solid rgba(245,158,11,0.3);
+  border-radius:0 12px 12px 0;
+  animation:fadeInUp 1.5s ease 1.6s both;
+}
+
+.quote-text{
+  font-size:16px;
+  color:#505050;
+  font-style:italic;
+  line-height:1.7;
+  margin-bottom:8px;
+}
+
+.quote-source{
+  font-size:12px;
+  color:#303030;
+}
+
+/* Bottom */
+.bottom{
+  font-size:12px;
+  color:#1a1a1a;
+  padding-top:40px;
+  border-top:1px solid #0a0a0a;
+  width:100%;
+  text-align:center;
+  animation:fadeInUp 1.5s ease 1.8s both;
+}
+
+.bottom span{color:#252525}
+
+/* Responsive */
+@media(max-width:480px){
+  .form-row{flex-direction:column}
+  .form-row button{width:100%}
+  .features{gap:20px}
+  h1{letter-spacing:-2px}
+}
 </style>
 </head>
 <body>
 
-<div class="stars" id="stars"></div>
-
-<div class="container">
-<div class="glow"></div>
-
-<div class="badge">Coming Soon</div>
-
-<h1>The opposite of <span>doomscrolling.</span></h1>
-
-<div class="sub">90 seconds of awe. Every night.<br>Designed by neuroscientists.</div>
-
-<div class="science">
-<strong>20 years of research</strong> shows awe reduces anxiety, improves sleep, and makes you kinder. We're building the first app that delivers it on demand.
+<!-- Animated space background -->
+<div class="space">
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
 </div>
 
-<div class="form-container">
-<div class="success" id="success">You're in. We'll let you know when it's ready. ✨</div>
-<div class="form-row" id="formRow">
-<input type="email" id="email" placeholder="Enter your email" required>
-<button onclick="submitEmail()">Join Waitlist</button>
-</div>
-</div>
+<!-- Stars -->
+<div class="stars-container" id="stars"></div>
 
-<div class="counter" id="counter"></div>
+<!-- Shooting stars -->
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
 
-<div class="features">
-<div class="feature"><div class="feature-dot"></div>Not meditation</div>
-<div class="feature"><div class="feature-dot"></div>Just watch & listen</div>
-<div class="feature"><div class="feature-dot"></div>Science-backed</div>
-<div class="feature"><div class="feature-dot"></div>Personalized</div>
+<!-- Floating particles -->
+<div id="particles"></div>
+
+<!-- Main content -->
+<div class="main">
+<div class="content">
+
+  <div class="icon">✦</div>
+
+  <div class="badge">Coming Soon</div>
+
+  <h1>
+    <span class="line1">The opposite of</span>
+    <span class="line2">doomscrolling.</span>
+  </h1>
+
+  <div class="sub">
+    <strong>90 seconds of awe.</strong> Every night.<br>
+    Designed by neuroscientists.
+  </div>
+
+  <div class="science">
+    <em>20 years of research</em> shows awe reduces anxiety, 
+    improves sleep, and makes you kinder. We're building 
+    the first app that delivers it on demand.
+  </div>
+
+  <div class="form-container">
+    <div class="success" id="success">
+      You're in. We'll let you know when it's ready. ✨
+    </div>
+    <div class="form-row" id="formRow">
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <button onclick="submitEmail()">Join Waitlist →</button>
+    </div>
+  </div>
+
+  <div class="counter" id="counter"></div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🧠</div>
+      <div class="feature-text">Science-backed</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">👁</div>
+      <div class="feature-text">Just watch & listen</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌙</div>
+      <div class="feature-text">Nightly ritual</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✨</div>
+      <div class="feature-text">Personalized</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <div class="quote-text">
+      "Awe is the feeling of being in the presence of 
+      something vast that transcends your understanding 
+      of the world."
+    </div>
+    <div class="quote-source">
+      — Dr. Dacher Keltner, UC Berkeley
+    </div>
+  </div>
+
+  <div class="bottom">
+    Built on awe research from <span>UC Berkeley</span>.<br>
+    <span style="margin-top:8px;display:block;font-size:11px;color:#111">
+      © 2025 Awe
+    </span>
+  </div>
+
 </div>
-
-<div class="bottom">
-Built on awe research from UC Berkeley.<br>
-<span style="margin-top:8px;display:block;font-size:11px;color:#1a1a1a">© 2025 Awe</span>
-</div>
-
 </div>
 
 <script>
-// Stars background
+// Generate stars
 var starsEl = document.getElementById('stars');
-for(var i=0;i<80;i++){
-var star=document.createElement('div');
-star.className='star';
-var size=Math.random()*2+1;
-star.style.width=size+'px';
-star.style.height=size+'px';
-star.style.left=Math.random()*100+'%';
-star.style.top=Math.random()*100+'%';
-star.style.setProperty('--duration',(Math.random()*3+2)+'s');
-star.style.animationDelay=Math.random()*5+'s';
-starsEl.appendChild(star);
+for(var i = 0; i < 150; i++){
+  var star = document.createElement('div');
+  star.className = 'star star-twinkle';
+  var size = Math.random() * 2.5 + 0.5;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.setProperty('--duration', (Math.random() * 4 + 2) + 's');
+  star.style.setProperty('--delay', (Math.random() * 5) + 's');
+  starsEl.appendChild(star);
 }
 
-// Email storage (using localStorage for now — upgrade to real backend later)
+// Generate floating particles
+var particlesEl = document.getElementById('particles');
+for(var i = 0; i < 20; i++){
+  var p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.bottom = '-5px';
+  p.style.setProperty('--duration', (Math.random() * 15 + 10) + 's');
+  p.style.setProperty('--delay', (Math.random() * 20) + 's');
+  var pSize = Math.random() * 3 + 1;
+  p.style.width = pSize + 'px';
+  p.style.height = pSize + 'px';
+  particlesEl.appendChild(p);
+}
+
+// Email handling
 var emails = JSON.parse(localStorage.getItem('awe_waitlist') || '[]');
 updateCounter();
 
 function submitEmail(){
-var input=document.getElementById('email');
-var email=input.value.trim();
-if(!email||!email.includes('@')){input.style.borderColor='#f87171';return}
+  var input = document.getElementById('email');
+  var email = input.value.trim();
+  if(!email || !email.includes('@') || !email.includes('.')){
+    input.style.borderColor = 'rgba(248,113,113,0.5)';
+    input.style.boxShadow = '0 0 20px rgba(248,113,113,0.1)';
+    setTimeout(function(){
+      input.style.borderColor = 'rgba(255,255,255,0.08)';
+      input.style.boxShadow = 'none';
+    }, 2000);
+    return;
+  }
 
-// Store locally
-if(emails.indexOf(email)===-1){emails.push(email)}
-localStorage.setItem('awe_waitlist',JSON.stringify(emails));
+  if(emails.indexOf(email) === -1){ emails.push(email); }
+  localStorage.setItem('awe_waitlist', JSON.stringify(emails));
 
-// Also send to a Google Form (optional — set up later)
-// For now just store locally
+  document.getElementById('formRow').style.display = 'none';
+  document.getElementById('success').classList.add('show');
+  updateCounter();
 
-document.getElementById('formRow').style.display='none';
-document.getElementById('success').classList.add('show');
-updateCounter();
-
-// Try to send to backend if available
-try{
-fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
-}catch(e){}
+  try{
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email: email})
+    }).catch(function(){});
+  } catch(e){}
 }
 
 function updateCounter(){
-if(emails.length>3){
-document.getElementById('counter').innerHTML='<span>'+emails.length+'</span> people on the waitlist';
-}
+  var el = document.getElementById('counter');
+  if(emails.length > 3){
+    el.innerHTML = '<span>' + emails.length + '</span> people on the waitlist';
+  }
 }
 
-// Enter key
-document.getElementById('email').addEventListener('keypress',function(e){if(e.key==='Enter')submitEmail()});
+document.getElementById('email').addEventListener('keypress', function(e){
+  if(e.key === 'Enter') submitEmail();
+});
+
+// Parallax effect on mouse move
+document.addEventListener('mousemove', function(e){
+  var x = (e.clientX / window.innerWidth - 0.5) * 10;
+  var y = (e.clientY / window.innerHeight - 0.5) * 10;
+  var nebulas = document.querySelectorAll('.nebula');
+  nebulas.forEach(function(n, i){
+    var speed = (i + 1) * 0.5;
+    n.style.transform = 'translate(' + (x * speed) + 'px, ' + (y * speed) + 'px)';
+  });
+});
 </script>
 
 </body>
