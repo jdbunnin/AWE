@@ -21,596 +21,436 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
   border-bottom:1px solid #111;
 }
 
-.slide-inner{
-  max-width:900px;
-  width:100%;
-}
+.slide-inner{max-width:900px;width:100%}
+.slide-num{position:absolute;top:24px;right:32px;font-size:12px;color:#252525;font-weight:600}
+.slide-label{font-size:11px;color:#505050;text-transform:uppercase;letter-spacing:3px;font-weight:600;margin-bottom:16px}
+.slide-title{font-size:clamp(36px,6vw,56px);font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:24px}
+.slide-title span{background:linear-gradient(135deg,#c0c0c0,#ffffff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.slide-subtitle{font-size:clamp(18px,3vw,24px);font-weight:300;color:#909090;line-height:1.6;margin-bottom:20px}
+.slide-body{font-size:18px;color:#b0b0b0;line-height:1.8;margin-bottom:24px}
+.slide-body strong{color:#ffffff;font-weight:600}
+.slide-body em{color:#e0e0e0;font-style:normal;font-weight:500}
 
-/* Slide number */
-.slide-num{
-  position:absolute;
-  top:24px;
-  right:32px;
-  font-size:12px;
-  color:#252525;
-  font-weight:600;
-}
+.big-stat{font-size:clamp(48px,10vw,80px);font-weight:800;letter-spacing:-3px;margin-bottom:8px;background:linear-gradient(135deg,#fff,#a0a0a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:16px;color:#606060;font-weight:400}
 
-/* Typography */
-.slide-label{
-  font-size:11px;
-  color:#505050;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-weight:600;
-  margin-bottom:16px;
-}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin:32px 0}
+.stat-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center}
+.stat-card-num{font-size:36px;font-weight:800;color:#fff;margin-bottom:4px}
+.stat-card-label{font-size:13px;color:#606060;font-weight:500}
 
-.slide-title{
-  font-size:clamp(36px,6vw,56px);
-  font-weight:800;
-  line-height:1.1;
-  letter-spacing:-2px;
-  margin-bottom:24px;
-}
+.quote-block{background:rgba(255,255,255,0.02);border-left:2px solid rgba(255,255,255,0.15);border-radius:0 12px 12px 0;padding:20px 28px;margin:16px 0}
+.quote-text{font-size:17px;color:#b0b0b0;font-style:italic;line-height:1.7}
+.quote-source{font-size:13px;color:#505050;margin-top:8px}
 
-.slide-title span{
-  background:linear-gradient(135deg,#c0c0c0,#ffffff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
+.evidence-row{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.02);border-radius:10px;margin:8px 0;border:1px solid rgba(255,255,255,0.04)}
+.evidence-title{font-size:15px;color:#d0d0d0;font-weight:500;flex:1}
+.evidence-stat{font-size:15px;color:#808080;font-weight:700;margin-left:20px;white-space:nowrap}
+.evidence-type{font-size:11px;color:#505050;text-transform:uppercase;letter-spacing:1px;margin-left:16px;white-space:nowrap}
 
-.slide-subtitle{
-  font-size:clamp(18px,3vw,24px);
-  font-weight:300;
-  color:#909090;
-  line-height:1.6;
-  margin-bottom:20px;
-}
+.comment-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:20px 24px;margin:10px 0}
+.comment-text{font-size:16px;color:#c0c0c0;font-style:italic;line-height:1.6;margin-bottom:6px}
+.comment-likes{font-size:12px;color:#505050}
+.comment-context{font-size:12px;color:#404040;margin-top:4px}
 
-.slide-body{
-  font-size:18px;
-  color:#b0b0b0;
-  line-height:1.8;
-  margin-bottom:24px;
-}
-
-.slide-body strong{
-  color:#ffffff;
-  font-weight:600;
-}
-
-.slide-body em{
-  color:#e0e0e0;
-  font-style:normal;
-  font-weight:500;
-}
-
-/* Big stat */
-.big-stat{
-  font-size:clamp(48px,10vw,80px);
-  font-weight:800;
-  letter-spacing:-3px;
-  margin-bottom:8px;
-  background:linear-gradient(135deg,#fff,#a0a0a0);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.stat-label{
-  font-size:16px;
-  color:#606060;
-  font-weight:400;
-}
-
-/* Stat grid */
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-  gap:20px;
-  margin:32px 0;
-}
-
-.stat-card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:16px;
-  padding:24px;
-  text-align:center;
-}
-
-.stat-card-num{
-  font-size:36px;
-  font-weight:800;
-  color:#fff;
-  margin-bottom:4px;
-}
-
-.stat-card-label{
-  font-size:13px;
-  color:#606060;
-  font-weight:500;
-}
-
-/* Quote blocks */
-.quote-block{
-  background:rgba(255,255,255,0.02);
-  border-left:2px solid rgba(255,255,255,0.15);
-  border-radius:0 12px 12px 0;
-  padding:20px 28px;
-  margin:16px 0;
-}
-
-.quote-text{
-  font-size:17px;
-  color:#b0b0b0;
-  font-style:italic;
-  line-height:1.7;
-}
-
-.quote-source{
-  font-size:13px;
-  color:#505050;
-  margin-top:8px;
-}
-
-/* Video evidence */
-.evidence-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 20px;
-  background:rgba(255,255,255,0.02);
-  border-radius:10px;
-  margin:8px 0;
-  border:1px solid rgba(255,255,255,0.04);
-}
-
-.evidence-title{
-  font-size:15px;
-  color:#d0d0d0;
-  font-weight:500;
-  flex:1;
-}
-
-.evidence-stat{
-  font-size:15px;
-  color:#808080;
-  font-weight:700;
-  margin-left:20px;
-  white-space:nowrap;
-}
-
-/* Comment cards */
-.comment-card{
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.05);
-  border-radius:12px;
-  padding:20px 24px;
-  margin:10px 0;
-}
-
-.comment-text{
-  font-size:16px;
-  color:#c0c0c0;
-  font-style:italic;
-  line-height:1.6;
-  margin-bottom:6px;
-}
-
-.comment-likes{
-  font-size:12px;
-  color:#505050;
-}
-
-/* Competitor table */
-.comp-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 20px;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-}
-
-.comp-name{
-  font-size:16px;
-  color:#d0d0d0;
-  font-weight:600;
-  width:140px;
-}
-
-.comp-val{
-  font-size:14px;
-  color:#808080;
-  width:100px;
-  text-align:center;
-}
-
-.comp-awe{
-  font-size:14px;
-  font-weight:600;
-  width:120px;
-  text-align:right;
-}
-
+.comp-row{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.comp-name{font-size:16px;color:#d0d0d0;font-weight:600;width:140px}
+.comp-val{font-size:14px;color:#808080;width:100px;text-align:center}
+.comp-awe{font-size:14px;font-weight:600;width:180px;text-align:right}
 .comp-awe.no{color:#f87171}
 .comp-awe.partial{color:#fbbf24}
 .comp-awe.yes{color:#4ade80}
 
-/* Feature list */
-.feature-list{
-  list-style:none;
-  padding:0;
-}
-
-.feature-list li{
-  padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  font-size:17px;
-  color:#b0b0b0;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
+.feature-list{list-style:none;padding:0}
+.feature-list li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:17px;color:#b0b0b0;display:flex;align-items:center;gap:12px}
 .feature-list li:last-child{border:none}
+.feature-dot{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0}
 
-.feature-dot{
-  width:8px;height:8px;
-  border-radius:50%;
-  background:#fff;
-  flex-shrink:0;
-}
+.moat-layer{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px;margin:12px 0}
+.moat-num{font-size:13px;color:#505050;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.moat-name{font-size:20px;color:#fff;font-weight:700;margin-bottom:8px}
+.moat-desc{font-size:15px;color:#909090;line-height:1.7}
 
-/* Moat layers */
-.moat-layer{
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:14px;
-  padding:28px;
-  margin:12px 0;
-}
-
-.moat-num{
-  font-size:13px;
-  color:#505050;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-
-.moat-name{
-  font-size:20px;
-  color:#fff;
-  font-weight:700;
-  margin-bottom:8px;
-}
-
-.moat-desc{
-  font-size:15px;
-  color:#909090;
-  line-height:1.7;
-}
-
-/* Timeline */
-.timeline-item{
-  display:flex;
-  gap:20px;
-  padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-}
-
-.timeline-month{
-  font-size:14px;
-  color:#606060;
-  font-weight:600;
-  width:80px;
-  flex-shrink:0;
-}
-
-.timeline-desc{
-  font-size:16px;
-  color:#b0b0b0;
-}
-
+.timeline-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.timeline-month{font-size:14px;color:#606060;font-weight:600;width:80px;flex-shrink:0}
+.timeline-desc{font-size:16px;color:#b0b0b0}
 .timeline-item.done .timeline-month{color:#4ade80}
 .timeline-item.done .timeline-desc{color:#d0d0d0}
 
-/* CTA slide */
-.cta-email{
-  font-size:24px;
-  color:#fff;
-  font-weight:600;
-  margin-top:16px;
-}
+.insight-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px 28px;margin:20px 0}
+.insight-title{font-size:14px;color:#808080;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.insight-text{font-size:16px;color:#c0c0c0;line-height:1.8}
 
-.cta-url{
-  font-size:18px;
-  color:#808080;
-  margin-top:8px;
-}
+.awe-type-badge{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px}
+.type-moral{background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.2)}
+.type-collective{background:rgba(139,92,246,0.1);color:#a78bfa;border:1px solid rgba(139,92,246,0.2)}
+.type-nature{background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.2)}
+.type-music{background:rgba(244,114,182,0.1);color:#f472b6;border:1px solid rgba(244,114,182,0.2)}
+.type-epiphany{background:rgba(96,165,250,0.1);color:#60a5fa;border:1px solid rgba(96,165,250,0.2)}
 
-/* Responsive */
+.cta-email{font-size:24px;color:#fff;font-weight:600;margin-top:16px}
+.cta-url{font-size:18px;color:#808080;margin-top:8px}
+
+.slide-dark{background:#000}
+.slide-subtle{background:#050505}
+
+.title-icon{font-size:48px;margin-bottom:24px}
+.title-main{font-size:clamp(56px,12vw,96px);font-weight:900;letter-spacing:-4px;margin-bottom:12px;color:#fff}
+.title-sub{font-size:clamp(20px,4vw,28px);font-weight:300;color:#606060;margin-bottom:40px}
+.title-meta{font-size:14px;color:#303030}
+
+.nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:8px}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.1);cursor:pointer;transition:all 0.3s}
+.nav-dot:hover{background:rgba(255,255,255,0.3)}
+.nav-dot.active{background:#fff;transform:scale(1.3)}
+
+.keltner-framework{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.framework-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;text-align:center}
+.framework-icon{font-size:28px;margin-bottom:8px}
+.framework-title{font-size:14px;color:#fff;font-weight:700;margin-bottom:4px}
+.framework-desc{font-size:12px;color:#707070;line-height:1.5}
+
 @media(max-width:768px){
   .slide{padding:40px 20px}
   .stat-grid{grid-template-columns:1fr 1fr}
   .comp-row{flex-direction:column;gap:8px;align-items:flex-start}
   .evidence-row{flex-direction:column;gap:4px;align-items:flex-start}
   .evidence-stat{margin-left:0}
+  .keltner-framework{grid-template-columns:1fr}
+  .nav{display:none}
 }
-
-/* Special slides */
-.slide-dark{background:#000}
-.slide-subtle{background:#050505}
-
-/* Title slide special */
-.title-icon{
-  font-size:48px;
-  margin-bottom:24px;
-}
-
-.title-main{
-  font-size:clamp(56px,12vw,96px);
-  font-weight:900;
-  letter-spacing:-4px;
-  margin-bottom:12px;
-  color:#fff;
-}
-
-.title-sub{
-  font-size:clamp(20px,4vw,28px);
-  font-weight:300;
-  color:#606060;
-  margin-bottom:40px;
-}
-
-.title-meta{
-  font-size:14px;
-  color:#303030;
-}
-
-/* Nav dots */
-.nav{
-  position:fixed;
-  right:20px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:100;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.nav-dot{
-  width:8px;height:8px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.1);
-  cursor:pointer;
-  transition:all 0.3s;
-}
-
-.nav-dot:hover{background:rgba(255,255,255,0.3)}
-.nav-dot.active{background:#fff;transform:scale(1.3)}
-
-@media(max-width:768px){.nav{display:none}}
 </style>
 </head>
 <body>
 
-<!-- Navigation dots -->
 <div class="nav" id="nav"></div>
 
 <!-- SLIDE 1: Title -->
-<div class="slide slide-dark" id="slide-1">
+<div class="slide slide-dark" id="s1">
   <div class="slide-inner" style="text-align:center">
     <div class="title-icon">✦</div>
     <div class="title-main">Awe</div>
     <div class="title-sub">The Unclaimed Emotion in Wellness</div>
-    <div class="title-meta">
-      <!-- FILL IN: Your name --><br>
-      <!-- FILL IN: Date -->
-    </div>
+    <div class="title-meta">Evidence Deck — 2025</div>
   </div>
   <div class="slide-num">01</div>
 </div>
 
 <!-- SLIDE 2: The Gap -->
-<div class="slide slide-subtle" id="slide-2">
+<div class="slide slide-subtle" id="s2">
   <div class="slide-inner">
     <div class="slide-label">The Opportunity</div>
-    <div class="slide-title"><span>The Gap</span></div>
+    <div class="slide-title"><span>The $5B Gap</span></div>
     <div class="slide-body" style="font-size:24px;line-height:1.8">
       <strong>Calm</strong> built a $2B company on calm.<br>
       <strong>Headspace</strong> built a $3B company on meditation.<br><br>
-      The most therapeutic emotion in clinical psychology — <strong>awe</strong> — has <strong>zero products</strong> built around it.
+      The most therapeutic emotion in clinical psychology — <strong>awe</strong> — has <strong>zero products</strong> built around it.<br><br>
+      Awe has <strong>stronger clinical evidence</strong> than meditation.<br>
+      Awe requires <strong>zero effort</strong> from the user.<br>
+      Awe works across <strong>every demographic</strong>.
     </div>
   </div>
   <div class="slide-num">02</div>
 </div>
 
 <!-- SLIDE 3: The Science -->
-<div class="slide slide-dark" id="slide-3">
+<div class="slide slide-dark" id="s3">
   <div class="slide-inner">
     <div class="slide-label">The Foundation</div>
     <div class="slide-title"><span>The Science Is Settled</span></div>
     <div class="slide-body">
-      <strong>20 years of research. UC Berkeley.</strong>
+      <strong>20 years of peer-reviewed research. UC Berkeley.</strong><br>
+      Lead researcher: <strong>Dr. Dacher Keltner</strong> — the scientist who defined and measured awe.
     </div>
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-num">↓ IL-6</div>
-        <div class="stat-card-label">Reduces inflammatory cytokines</div>
+        <div class="stat-card-label">Reduces inflammatory cytokines — the biomarker linked to chronic disease</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">↓ DMN</div>
-        <div class="stat-card-label">Quiets anxious self-referential thinking</div>
+        <div class="stat-card-label">Deactivates the default mode network — quiets anxious, self-referential thinking</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">↑ Prosocial</div>
-        <div class="stat-card-label">Increases generosity and kindness</div>
+        <div class="stat-card-label">Increases generosity, kindness, and cooperative behavior</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">↑ Sleep</div>
-        <div class="stat-card-label">Improves sleep quality</div>
+        <div class="stat-card-label">Improves sleep quality and reduces time to fall asleep</div>
       </div>
     </div>
-    <div class="slide-body" style="margin-top:24px">
-      Published in: <em>Journal of Personality and Social Psychology</em>,
-      <em>Emotion</em>, <em>Psychological Science</em><br><br>
-      Lead researcher: <strong>Dr. Dacher Keltner, UC Berkeley</strong>
+
+    <div class="keltner-framework">
+      <div class="framework-card">
+        <div class="framework-icon">🔬</div>
+        <div class="framework-title">Small Self Effect</div>
+        <div class="framework-desc">Awe shrinks the ego. Your problems feel smaller. Your perspective expands.</div>
+      </div>
+      <div class="framework-card">
+        <div class="framework-icon">🤝</div>
+        <div class="framework-title">Connection</div>
+        <div class="framework-desc">Awe increases feeling of connection to others and to something larger than yourself.</div>
+      </div>
+      <div class="framework-card">
+        <div class="framework-icon">⏳</div>
+        <div class="framework-title">Time Expansion</div>
+        <div class="framework-desc">Awe changes perception of time. People feel they have MORE time available after experiencing awe.</div>
+      </div>
+    </div>
+
+    <div class="slide-body" style="margin-top:16px;font-size:15px;color:#707070">
+      Published in: <em>Journal of Personality and Social Psychology</em>, <em>Emotion</em>, <em>Psychological Science</em>
     </div>
   </div>
   <div class="slide-num">03</div>
 </div>
 
-<!-- SLIDE 4: Screen Evidence -->
-<div class="slide slide-subtle" id="slide-4">
+<!-- SLIDE 4: 8 Pathways -->
+<div class="slide slide-subtle" id="s4">
   <div class="slide-inner">
-    <div class="slide-label">YouTube Evidence</div>
-    <div class="slide-title"><span>It Already Works on Screens</span></div>
-
-    <!-- FILL IN: Replace these with your actual YouTube data -->
-    <div class="evidence-row">
-      <div class="evidence-title">"[Video title 1]"</div>
-      <div class="evidence-stat">[X]M views</div>
-    </div>
-    <div class="evidence-row">
-      <div class="evidence-title">"[Video title 2]"</div>
-      <div class="evidence-stat">[X]M views</div>
-    </div>
-    <div class="evidence-row">
-      <div class="evidence-title">"[Video title 3]"</div>
-      <div class="evidence-stat">[X]M views</div>
-    </div>
-    <div class="evidence-row">
-      <div class="evidence-title">"[Video title 4]"</div>
-      <div class="evidence-stat">[X]M views</div>
-    </div>
-    <div class="evidence-row">
-      <div class="evidence-title">"[Video title 5]"</div>
-      <div class="evidence-stat">[X]M views</div>
+    <div class="slide-label">The Framework</div>
+    <div class="slide-title"><span>8 Pathways to Awe</span></div>
+    <div class="slide-body">
+      Keltner's research identifies <strong>8 distinct triggers</strong> for awe. Each one activates the same neurological response through a different door. Modern viral content maps directly onto these pathways.
     </div>
 
-    <div class="slide-body" style="margin-top:24px">
-      <!-- FILL IN: Combined total -->
-      Combined: <strong>[X]M+ views</strong> on awe content.<br>
-      The demand exists. The product doesn't.
+    <div class="stat-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))">
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">❤️</div>
+        <div class="stat-card-label" style="color:#fbbf24;font-weight:600">Moral Beauty</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Human goodness, courage, sacrifice, compassion</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">👥</div>
+        <div class="stat-card-label" style="color:#a78bfa;font-weight:600">Collective</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Crowds, concerts, ceremonies, synchronized movement</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">🌊</div>
+        <div class="stat-card-label" style="color:#34d399;font-weight:600">Nature</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Mountains, oceans, storms, space, sunsets</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">🎵</div>
+        <div class="stat-card-label" style="color:#f472b6;font-weight:600">Music</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Chills, crescendos, choirs, live performances</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">🏛</div>
+        <div class="stat-card-label" style="color:#818cf8;font-weight:600">Art & Design</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Cathedrals, paintings, cinematography, architecture</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">🕊</div>
+        <div class="stat-card-label" style="color:#e2e8f0;font-weight:600">Spiritual</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Meditation, transcendence, connection to something eternal</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">💫</div>
+        <div class="stat-card-label" style="color:#fca5a5;font-weight:600">Life & Death</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Birth, mortality, grief, nostalgia, existence</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:24px">💡</div>
+        <div class="stat-card-label" style="color:#60a5fa;font-weight:600">Epiphany</div>
+        <div style="font-size:11px;color:#606060;margin-top:4px">Scale of universe, scientific insight, "everything clicked"</div>
+      </div>
     </div>
   </div>
   <div class="slide-num">04</div>
 </div>
 
-<!-- SLIDE 5: Comments -->
-<div class="slide slide-dark" id="slide-5">
+<!-- SLIDE 5: YouTube Evidence -->
+<div class="slide slide-dark" id="s5">
   <div class="slide-inner">
-    <div class="slide-label">In Their Own Words</div>
-    <div class="slide-title"><span>What People Say</span></div>
-
-    <!-- FILL IN: Replace with your actual mined comments -->
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 1]"</div>
-      <div class="comment-likes">[X]K likes</div>
-    </div>
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 2]"</div>
-      <div class="comment-likes">[X]K likes</div>
-    </div>
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 3]"</div>
-      <div class="comment-likes">[X]K likes</div>
-    </div>
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 4]"</div>
-      <div class="comment-likes">[X]K likes</div>
-    </div>
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 5]"</div>
-      <div class="comment-likes">[X]K likes</div>
-    </div>
-    <div class="comment-card">
-      <div class="comment-text">"[Comment 6]"</div>
-      <div class="comment-likes">[X]K likes</div>
+    <div class="slide-label">YouTube Evidence</div>
+    <div class="slide-title"><span>420M+ Views. Real Awe.</span></div>
+    <div class="slide-body">
+      Awe content already generates <strong>massive engagement</strong> on YouTube. These aren't entertainment videos — they're <strong>emotional experiences</strong> that people return to repeatedly.
     </div>
 
+    <div class="evidence-row">
+      <div class="evidence-title">Relaxing Nature Video</div>
+      <div class="evidence-stat">30M views</div>
+      <span class="awe-type-badge type-nature">Nature</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">Live Performance — Rain, Song, Crowd</div>
+      <div class="evidence-stat">160M views</div>
+      <span class="awe-type-badge type-collective">Collective</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">Acts of Kindness Compilation</div>
+      <div class="evidence-stat">48M views</div>
+      <span class="awe-type-badge type-moral">Moral Beauty</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">Emotional Rewatch Compilation</div>
+      <div class="evidence-stat">182M views</div>
+      <span class="awe-type-badge type-music">Music/Emotional</span>
+    </div>
+
+    <div class="insight-box" style="margin-top:24px">
+      <div class="insight-title">Key Insight</div>
+      <div class="insight-text">Combined: <strong>420M+ views</strong> across just 4 videos. The demand for awe content is proven at massive scale. What doesn't exist is a <strong>product</strong> — personalized, science-backed, delivered as a daily ritual.</div>
+    </div>
   </div>
   <div class="slide-num">05</div>
 </div>
 
-<!-- SLIDE 6: TikTok -->
-<div class="slide slide-subtle" id="slide-6">
+<!-- SLIDE 6: Comments -->
+<div class="slide slide-subtle" id="s6">
   <div class="slide-inner">
-    <div class="slide-label">TikTok Evidence</div>
-    <div class="slide-title"><span>TikTok Confirms It</span></div>
-
-    <div class="stat-grid">
-      <!-- FILL IN: Your TikTok numbers -->
-      <div class="stat-card">
-        <div class="stat-card-num">[X]+</div>
-        <div class="stat-card-label">Awe videos analyzed</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-num">[X]M</div>
-        <div class="stat-card-label">Combined views</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card-num">[Type]</div>
-        <div class="stat-card-label">Top performing content</div>
-      </div>
+    <div class="slide-label">In Their Own Words</div>
+    <div class="slide-title"><span>What People Say</span></div>
+    <div class="slide-body">
+      These aren't curated testimonials. These are <strong>real comments</strong> from real people, describing <strong>real physiological responses</strong> — the exact responses that Keltner's research measures in laboratory settings.
     </div>
 
-    <div class="slide-body" style="margin-top:24px">
-      Awe content consistently outperforms platform averages for engagement, completion rate, and shares.
+    <div class="comment-card">
+      <div class="comment-text">"There's something so special about this performance... the rain, the song, the crowd just living in the moment. I get goosebumps every time I watch this."</div>
+      <div class="comment-likes">36K likes</div>
+      <div class="comment-context">Collective Effervescence — live performance video, 160M views</div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-text">"22 y.o. russian man. I'm crying. Thanks to all kind people for making our world better"</div>
+      <div class="comment-likes">Acts of kindness video — 48M views</div>
+      <div class="comment-context">Moral Beauty — cross-cultural emotional response</div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-text">"This is one of those videos that you just get the urge to rewatch every now and then."</div>
+      <div class="comment-likes">37K likes</div>
+      <div class="comment-context">Repeat viewing behavior — the foundation of a subscription product</div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-text">"Right now, there are people all over the world who are just like you. They're either lonely, they're missing somebody, they're depressed, they're hurt... And right now, they are sitting here reading these words, and I'm writing this for you so you dont feel alone anymore."</div>
+      <div class="comment-likes">4.9K likes</div>
+      <div class="comment-context">Nature video, 30M views — people seeking connection through awe content</div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">What This Proves</div>
+      <div class="insight-text">People already experience <strong>real awe</strong> from screen content. They describe goosebumps, tears, and the urge to rewatch — exactly the physiological markers that Keltner's lab measures. They're <strong>already doing this</strong>. Nobody has built a product around it.</div>
     </div>
   </div>
   <div class="slide-num">06</div>
 </div>
 
-<!-- SLIDE 7: Phone Calls -->
-<div class="slide slide-dark" id="slide-7">
+<!-- SLIDE 7: TikTok -->
+<div class="slide slide-dark" id="s7">
   <div class="slide-inner">
-    <div class="slide-label">Direct Conversations</div>
-    <div class="slide-title"><span>What We Heard</span></div>
-
-    <!-- FILL IN: Your actual phone call quotes -->
-    <div class="quote-block">
-      <div class="quote-text">"[Friend quote 1]"</div>
-      <div class="quote-source">— [Name], [age/context]</div>
-    </div>
-    <div class="quote-block">
-      <div class="quote-text">"[Friend quote 2]"</div>
-      <div class="quote-source">— [Name], [age/context]</div>
-    </div>
-    <div class="quote-block">
-      <div class="quote-text">"[Friend quote 3]"</div>
-      <div class="quote-source">— [Name], [age/context]</div>
-    </div>
-    <div class="quote-block">
-      <div class="quote-text">"[Friend quote 4]"</div>
-      <div class="quote-source">— [Name], [age/context]</div>
+    <div class="slide-label">TikTok Evidence</div>
+    <div class="slide-title"><span>573M Views. 72M Likes.</span></div>
+    <div class="slide-body">
+      Awe content doesn't just perform on YouTube. On TikTok — the platform that defines modern attention — <strong>awe consistently outperforms</strong> entertainment content for engagement and emotional response.
     </div>
 
-    <div class="slide-body" style="margin-top:24px">
-      <!-- FILL IN -->
-      <strong>[X] out of 20</strong> people recognized the awe experience and expressed strong interest in the product.
+    <div class="evidence-row">
+      <div class="evidence-title">@hopecoreproject</div>
+      <div class="evidence-stat">174M views · 21M likes</div>
+      <span class="awe-type-badge type-moral">Moral Beauty</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">@jackjonestv123</div>
+      <div class="evidence-stat">65M views · 11M likes</div>
+      <span class="awe-type-badge type-moral">Moral Beauty</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">@astrospaceq</div>
+      <div class="evidence-stat">211M views · 21M likes</div>
+      <span class="awe-type-badge type-nature">Nature / Vastness</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">@losmonolovers</div>
+      <div class="evidence-stat">36M views · 5M likes</div>
+      <span class="awe-type-badge type-collective">Collective</span>
+    </div>
+    <div class="evidence-row">
+      <div class="evidence-title">@bryanwoess</div>
+      <div class="evidence-stat">87M views · 14M likes</div>
+      <span class="awe-type-badge type-nature">Nature</span>
+    </div>
+
+    <div class="stat-grid" style="margin-top:24px">
+      <div class="stat-card">
+        <div class="stat-card-num">573M</div>
+        <div class="stat-card-label">Combined views across 5 videos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num">72M</div>
+        <div class="stat-card-label">Combined likes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num">12.6%</div>
+        <div class="stat-card-label">Like-to-view ratio (platform avg: 4%)</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">Why This Matters</div>
+      <div class="insight-text">A 12.6% like-to-view ratio is <strong>3x the TikTok average</strong>. Awe content doesn't just get watched — it gets <strong>saved, shared, and rewatched</strong>. This is the behavioral signature of content people would <strong>pay for</strong> if it were delivered as a personalized daily experience.</div>
     </div>
   </div>
   <div class="slide-num">07</div>
 </div>
 
-<!-- SLIDE 8: Survey -->
-<div class="slide slide-subtle" id="slide-8">
+<!-- SLIDE 8: The Pattern -->
+<div class="slide slide-subtle" id="s8">
   <div class="slide-inner">
-    <div class="slide-label">Survey Data</div>
+    <div class="slide-label">The Insight</div>
+    <div class="slide-title"><span>Viral Content IS Awe</span></div>
+    <div class="slide-body" style="font-size:20px">
+      The most shared content on the internet maps <strong>directly</strong> onto Keltner's 8 awe pathways. The platforms discovered this accidentally. We're doing it <strong>intentionally</strong>.
+    </div>
+
+    <div class="stat-grid" style="grid-template-columns:1fr 1fr">
+      <div class="stat-card" style="text-align:left;padding:20px 24px">
+        <div style="font-size:14px;color:#fbbf24;font-weight:600;margin-bottom:12px">WHAT GOES VIRAL</div>
+        <div style="font-size:14px;color:#909090;line-height:2">
+          "Faith in humanity restored"<br>
+          Stadium singing videos<br>
+          Nature timelapses<br>
+          "This gave me chills"<br>
+          Mind-blowing facts<br>
+          Reunions and kindness
+        </div>
+      </div>
+      <div class="stat-card" style="text-align:left;padding:20px 24px">
+        <div style="font-size:14px;color:#fff;font-weight:600;margin-bottom:12px">WHAT AWE RESEARCH MEASURES</div>
+        <div style="font-size:14px;color:#909090;line-height:2">
+          Moral beauty response<br>
+          Collective effervescence<br>
+          Vastness + accommodation<br>
+          Musical frisson<br>
+          Intellectual epiphany<br>
+          Prosocial behavior trigger
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">The Opportunity</div>
+      <div class="insight-text">Every platform's algorithm has accidentally discovered that <strong>awe is the most engaging emotion</strong>. But they deliver it randomly, surrounded by ads, mixed with rage bait and anxiety. We deliver it <strong>intentionally, purely, and personally</strong> — backed by the science that explains why it works.</div>
+    </div>
+  </div>
+  <div class="slide-num">08</div>
+</div>
+
+<!-- SLIDE 9: Survey Results -->
+<div class="slide slide-dark" id="s9">
+  <div class="slide-inner">
+    <div class="slide-label">Primary Research</div>
     <div class="slide-title"><span>Survey Results</span></div>
 
-    <!-- FILL IN: Your survey numbers -->
+    <!-- FILL IN: Your actual survey numbers -->
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-num">[X]%</div>
-        <div class="stat-card-label">Have experienced awe from video</div>
+        <div class="stat-card-label">Have experienced awe from a video</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">[X]%</div>
@@ -622,20 +462,37 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       </div>
       <div class="stat-card">
         <div class="stat-card-num">[Type]</div>
-        <div class="stat-card-label">Most wanted content type</div>
+        <div class="stat-card-label">Most wanted content</div>
       </div>
     </div>
 
-    <div class="slide-body" style="margin-top:24px">
-      <!-- FILL IN -->
-      Based on <strong>[X] responses</strong>. Most wanted time: <strong>[time]</strong>.
+    <!-- FILL IN: Your phone call quotes -->
+    <div style="margin-top:32px">
+      <div class="slide-label">Direct Conversations — 20 People</div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">"[Friend quote 1]"</div>
+      <div class="quote-source">— [Name]</div>
+    </div>
+    <div class="quote-block">
+      <div class="quote-text">"[Friend quote 2]"</div>
+      <div class="quote-source">— [Name]</div>
+    </div>
+    <div class="quote-block">
+      <div class="quote-text">"[Friend quote 3]"</div>
+      <div class="quote-source">— [Name]</div>
+    </div>
+
+    <div class="slide-body" style="margin-top:16px">
+      Based on <strong>[X] survey responses</strong> and <strong>20 direct conversations</strong>.
     </div>
   </div>
-  <div class="slide-num">08</div>
+  <div class="slide-num">09</div>
 </div>
 
-<!-- SLIDE 9: Competition -->
-<div class="slide slide-dark" id="slide-9">
+<!-- SLIDE 10: Competition -->
+<div class="slide slide-subtle" id="s10">
   <div class="slide-inner">
     <div class="slide-label">Competitive Landscape</div>
     <div class="slide-title"><span>Nobody Owns Awe</span></div>
@@ -644,95 +501,116 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       <div class="comp-row" style="border-bottom:1px solid rgba(255,255,255,0.1)">
         <div class="comp-name" style="color:#606060">Company</div>
         <div class="comp-val" style="color:#606060">Valuation</div>
-        <div class="comp-awe" style="color:#606060">Awe Content?</div>
+        <div class="comp-awe" style="color:#606060;text-align:right">Awe Content?</div>
       </div>
       <div class="comp-row">
         <div class="comp-name">Calm</div>
         <div class="comp-val">$2B</div>
-        <div class="comp-awe no">None</div>
+        <div class="comp-awe no">None. Calm ≠ awe.</div>
       </div>
       <div class="comp-row">
         <div class="comp-name">Headspace</div>
         <div class="comp-val">$3B</div>
-        <div class="comp-awe no">None</div>
+        <div class="comp-awe no">None. Meditation ≠ awe.</div>
       </div>
       <div class="comp-row">
         <div class="comp-name">TRIPP</div>
         <div class="comp-val">$11M raised</div>
-        <div class="comp-awe partial">VR only. No science.</div>
+        <div class="comp-awe partial">VR only. No science. Abstract CGI.</div>
       </div>
       <div class="comp-row">
         <div class="comp-name">YouTube</div>
         <div class="comp-val">—</div>
-        <div class="comp-awe partial">Random. No product.</div>
+        <div class="comp-awe partial">Random. No product. No personalization.</div>
       </div>
-      <div class="comp-row" style="background:rgba(255,255,255,0.03);border-radius:8px;margin-top:8px">
-        <div class="comp-name" style="color:#fff">Awe</div>
+      <div class="comp-row">
+        <div class="comp-name">TikTok</div>
+        <div class="comp-val">—</div>
+        <div class="comp-awe partial">Accidental. Mixed with everything else.</div>
+      </div>
+      <div class="comp-row" style="background:rgba(255,255,255,0.03);border-radius:8px;margin-top:12px">
+        <div class="comp-name" style="color:#fff;font-weight:700">Awe</div>
         <div class="comp-val" style="color:#fff">Building</div>
-        <div class="comp-awe yes">Science-backed. Phone-first.</div>
+        <div class="comp-awe yes">Science-backed. Phone-first. Personalized. Pure.</div>
       </div>
     </div>
+
+    <div class="insight-box" style="margin-top:24px">
+      <div class="insight-title">Why TRIPP Validates Us</div>
+      <div class="insight-text">TRIPP raised $11M proving demand for emotional wellness experiences. But they're VR-only (tiny market), use abstract CGI (not real human content), and have no published science. We're building what TRIPP should have built — for <strong>phones</strong> (3.5B users vs 20M VR headsets).</div>
+    </div>
   </div>
-  <div class="slide-num">09</div>
+  <div class="slide-num">10</div>
 </div>
 
-<!-- SLIDE 10: Product -->
-<div class="slide slide-subtle" id="slide-10">
+<!-- SLIDE 11: Product -->
+<div class="slide slide-dark" id="s11">
   <div class="slide-inner">
     <div class="slide-label">The Product</div>
-    <div class="slide-title"><span>What We're Building</span></div>
+    <div class="slide-title"><span>The Opposite of Doomscrolling</span></div>
 
     <div class="slide-body" style="font-size:20px;margin-bottom:32px">
       A subscription app delivering scientifically-calibrated awe experiences. Not meditation. Not breathing. <strong>You just watch and listen.</strong>
     </div>
 
     <ul class="feature-list">
-      <li><span class="feature-dot"></span> Moral beauty — real human kindness</li>
-      <li><span class="feature-dot"></span> Collective moments — shared human experiences</li>
-      <li><span class="feature-dot"></span> Nature — vast scenery and natural power</li>
-      <li><span class="feature-dot"></span> Cosmic — the scale of the universe</li>
-      <li><span class="feature-dot"></span> Music — engineered frisson</li>
-      <li><span class="feature-dot"></span> Personalized to each user over time</li>
-      <li><span class="feature-dot"></span> 90 seconds to 45 minutes</li>
-      <li><span class="feature-dot"></span> Every screen: phone, TV, VR</li>
+      <li><span class="feature-dot" style="background:#fbbf24"></span> <strong>Moral beauty</strong> — real human kindness, courage, sacrifice</li>
+      <li><span class="feature-dot" style="background:#a78bfa"></span> <strong>Collective moments</strong> — crowds, concerts, shared human experience</li>
+      <li><span class="feature-dot" style="background:#34d399"></span> <strong>Nature</strong> — vast scenery, storms, oceans, space</li>
+      <li><span class="feature-dot" style="background:#60a5fa"></span> <strong>Cosmic perspective</strong> — scale of the universe, deep time</li>
+      <li><span class="feature-dot" style="background:#f472b6"></span> <strong>Music</strong> — engineered frisson, crescendos, choirs</li>
+      <li><span class="feature-dot"></span> <strong>Personalized</strong> to what produces awe in YOU specifically</li>
+      <li><span class="feature-dot"></span> <strong>90 seconds to 45 minutes</strong> — micro-dose to deep immersion</li>
+      <li><span class="feature-dot"></span> <strong>Every screen</strong> — phone, TV, tablet, eventually VR</li>
     </ul>
 
-    <div class="slide-body" style="margin-top:24px;font-size:20px">
-      <strong>The opposite of doomscrolling.</strong>
-    </div>
-  </div>
-  <div class="slide-num">10</div>
-</div>
-
-<!-- SLIDE 11: Moat -->
-<div class="slide slide-dark" id="slide-11">
-  <div class="slide-inner">
-    <div class="slide-label">Defensibility</div>
-    <div class="slide-title"><span>The Moat</span></div>
-
-    <div class="moat-layer">
-      <div class="moat-num">Layer 1</div>
-      <div class="moat-name">Scientific Partnership</div>
-      <div class="moat-desc">Built with the researchers who discovered the science of awe. Exclusive co-branded clinical studies. Published in peer-reviewed journals. This locks out wellness-woo competitors.</div>
-    </div>
-
-    <div class="moat-layer">
-      <div class="moat-num">Layer 2</div>
-      <div class="moat-name">Personalization Data</div>
-      <div class="moat-desc">The app learns what produces awe in YOU specifically. Every session makes the next session better. The longer users stay, the harder they are to replace.</div>
-    </div>
-
-    <div class="moat-layer">
-      <div class="moat-num">Layer 3</div>
-      <div class="moat-name">Biometric Dataset</div>
-      <div class="moat-desc">Phase 2: Camera and Apple Watch measure your physiological awe response in real-time. We will own the only training corpus of what-produces-awe-in-whom. Future entrants can't catch up.</div>
+    <div class="stat-grid" style="margin-top:32px;grid-template-columns:repeat(3,1fr)">
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:28px">$12.99</div>
+        <div class="stat-card-label">/month consumer</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:28px">$20</div>
+        <div class="stat-card-label">/employee/month enterprise</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-num" style="font-size:28px">B2B2C</div>
+        <div class="stat-card-label">Hotels, airlines, hospitals</div>
+      </div>
     </div>
   </div>
   <div class="slide-num">11</div>
 </div>
 
-<!-- SLIDE 12: Traction -->
-<div class="slide slide-subtle" id="slide-12">
+<!-- SLIDE 12: Moat -->
+<div class="slide slide-subtle" id="s12">
+  <div class="slide-inner">
+    <div class="slide-label">Defensibility</div>
+    <div class="slide-title"><span>Three-Layer Moat</span></div>
+
+    <div class="moat-layer">
+      <div class="moat-num">Layer 1</div>
+      <div class="moat-name">Scientific Legitimacy</div>
+      <div class="moat-desc">Built with the researchers who <strong>discovered</strong> the science of awe. Co-branded clinical studies. Published in peer-reviewed journals. This locks out wellness-woo competitors and makes enterprise and healthcare sales legitimate. <strong>Calm never had this.</strong></div>
+    </div>
+
+    <div class="moat-layer">
+      <div class="moat-num">Layer 2</div>
+      <div class="moat-name">Personalization Data</div>
+      <div class="moat-desc">The app learns what produces awe in <strong>YOU</strong> specifically. Every session makes the next session better. The longer users stay, the harder they are to replace. Netflix doesn't know your nervous system. <strong>We will.</strong></div>
+    </div>
+
+    <div class="moat-layer">
+      <div class="moat-num">Layer 3</div>
+      <div class="moat-name">Biometric Dataset</div>
+      <div class="moat-desc">Phase 2: Camera-based HRV, pupil dilation, micro-expressions during sessions. The system learns what produces awe in you and adapts in real-time. We will own the <strong>only training corpus</strong> of what-produces-awe-in-whom. <strong>Future entrants can't catch up.</strong></div>
+    </div>
+  </div>
+  <div class="slide-num">12</div>
+</div>
+
+<!-- SLIDE 13: Traction -->
+<div class="slide slide-dark" id="s13">
   <div class="slide-inner">
     <div class="slide-label">Early Signal</div>
     <div class="slide-title"><span>Traction</span></div>
@@ -749,7 +627,7 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       </div>
       <div class="stat-card">
         <div class="stat-card-num">20/20</div>
-        <div class="stat-card-label">Direct conversations positive</div>
+        <div class="stat-card-label">Conversations positive</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-num">[X] days</div>
@@ -757,28 +635,27 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       </div>
     </div>
 
-    <div class="slide-body" style="margin-top:24px;text-align:center">
-      <!-- FILL IN -->
+    <div class="slide-body" style="margin-top:24px;text-align:center;font-size:20px">
       <strong>feelawe.com</strong>
     </div>
   </div>
-  <div class="slide-num">12</div>
+  <div class="slide-num">13</div>
 </div>
 
-<!-- SLIDE 13: The Ask -->
-<div class="slide slide-dark" id="slide-13">
+<!-- SLIDE 14: The Ask -->
+<div class="slide slide-subtle" id="s14">
   <div class="slide-inner">
     <div class="slide-label">Partnership</div>
     <div class="slide-title"><span>The Ask</span></div>
 
     <div class="slide-body" style="font-size:20px">
-      Looking for a scientific partner to:
+      Looking for a scientific partner to bring rigor to what the data already shows works:
     </div>
 
     <ul class="feature-list" style="margin:24px 0">
       <li><span class="feature-dot"></span> Co-design the awe stimulus protocols</li>
       <li><span class="feature-dot"></span> Run a validation study through your lab</li>
-      <li><span class="feature-dot"></span> Serve as scientific advisor</li>
+      <li><span class="feature-dot"></span> Serve as scientific advisor and public voice</li>
     </ul>
 
     <div class="slide-body" style="font-size:20px;margin-top:32px">
@@ -792,15 +669,15 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       <li><span class="feature-dot"></span> Your name on the product</li>
     </ul>
 
-    <div class="slide-body" style="margin-top:24px;color:#909090">
-      We're raising a pre-seed round with the research partnership as the centerpiece.
+    <div class="insight-box" style="margin-top:24px">
+      <div class="insight-text" style="color:#909090">We're raising a pre-seed round with the research partnership as the centerpiece. The science is done. The demand is proven. What's missing is the product — and the scientific credibility to make it legitimate.</div>
     </div>
   </div>
-  <div class="slide-num">13</div>
+  <div class="slide-num">14</div>
 </div>
 
-<!-- SLIDE 14: Timeline -->
-<div class="slide slide-subtle" id="slide-14">
+<!-- SLIDE 15: Timeline -->
+<div class="slide slide-dark" id="s15">
   <div class="slide-inner">
     <div class="slide-label">Roadmap</div>
     <div class="slide-title"><span>Timeline</span></div>
@@ -808,7 +685,7 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
     <div style="margin-top:24px">
       <div class="timeline-item done">
         <div class="timeline-month">Month 1</div>
-        <div class="timeline-desc"><strong>Evidence gathering</strong> — surveys, interviews, market analysis ✓</div>
+        <div class="timeline-desc"><strong>Evidence gathering</strong> — 993M views of awe content analyzed, survey, interviews ✓</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-month">Month 2</div>
@@ -816,27 +693,27 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
       </div>
       <div class="timeline-item">
         <div class="timeline-month">Month 3</div>
-        <div class="timeline-desc"><strong>Prototype content</strong> — first awe sequences + beta launch</div>
+        <div class="timeline-desc"><strong>Prototype content</strong> — first awe sequences tested on 500 beta users</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-month">Month 4</div>
-        <div class="timeline-desc"><strong>500 beta users</strong> — retention data + clinical signals</div>
+        <div class="timeline-desc"><strong>Product-market fit</strong> — retention data, clinical signals, D7 beating Calm's 35%</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-month">Month 5</div>
-        <div class="timeline-desc"><strong>Clinical study begins</strong> — published validation</div>
+        <div class="timeline-desc"><strong>Clinical study begins</strong> — published validation of screen-delivered awe</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-month">Month 6</div>
-        <div class="timeline-desc"><strong>Raise seed</strong> — $3-4M to build the full platform</div>
+        <div class="timeline-desc"><strong>Raise seed</strong> — $3-4M to build the full platform and scale</div>
       </div>
     </div>
   </div>
-  <div class="slide-num">14</div>
+  <div class="slide-num">15</div>
 </div>
 
-<!-- SLIDE 15: Contact -->
-<div class="slide slide-dark" id="slide-15">
+<!-- SLIDE 16: Contact -->
+<div class="slide slide-subtle" id="s16">
   <div class="slide-inner" style="text-align:center">
     <div class="title-icon">✦</div>
     <div class="slide-title"><span>Let's Talk</span></div>
@@ -845,18 +722,21 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
     <div class="cta-email">[Your Email]</div>
     <div class="cta-url">feelawe.com</div>
 
-    <div class="quote-block" style="margin-top:48px;max-width:500px;margin-left:auto;margin-right:auto">
-      <div class="quote-text">
-        "Awe is the feeling of being in the presence of something vast that transcends your understanding of the world."
-      </div>
+    <div class="quote-block" style="margin-top:48px;max-width:520px;margin-left:auto;margin-right:auto">
+      <div class="quote-text">"Awe is the feeling of being in the presence of something vast that transcends your understanding of the world."</div>
       <div class="quote-source">— Dr. Dacher Keltner, UC Berkeley</div>
     </div>
+
+    <div style="margin-top:48px;font-size:14px;color:#303030">
+      993M+ views of awe content analyzed · [X] survey responses · [X] waitlist signups<br>
+      The science is settled. The demand is proven. The category is empty.<br><br>
+      <strong style="color:#606060">The opposite of doomscrolling.</strong>
+    </div>
   </div>
-  <div class="slide-num">15</div>
+  <div class="slide-num">16</div>
 </div>
 
 <script>
-// Build nav dots
 var slides = document.querySelectorAll('.slide');
 var nav = document.getElementById('nav');
 slides.forEach(function(s, i){
@@ -866,14 +746,13 @@ slides.forEach(function(s, i){
   nav.appendChild(dot);
 });
 
-// Update active dot on scroll
 window.addEventListener('scroll', function(){
   var dots = document.querySelectorAll('.nav-dot');
   var scrollPos = window.scrollY + window.innerHeight / 2;
   slides.forEach(function(s, i){
     if(scrollPos >= s.offsetTop && scrollPos < s.offsetTop + s.offsetHeight){
       dots.forEach(function(d){ d.classList.remove('active') });
-      dots[i].classList.add('active');
+      if(dots[i]) dots[i].classList.add('active');
     }
   });
 });
