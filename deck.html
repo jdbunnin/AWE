@@ -6,10 +6,8 @@
 <title>Awe — Evidence Deck</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#000;color:#fff}
-
 .slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 40px;position:relative;border-bottom:1px solid #111}
 .slide-inner{max-width:900px;width:100%}
 .slide-num{position:absolute;top:24px;right:32px;font-size:12px;color:#252525;font-weight:600}
@@ -19,51 +17,40 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
 .slide-body{font-size:18px;color:#b0b0b0;line-height:1.8;margin-bottom:24px}
 .slide-body strong{color:#ffffff;font-weight:600}
 .slide-body em{color:#e0e0e0;font-style:normal;font-weight:500}
-
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin:32px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:32px 0}
 .stat-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center}
 .stat-card-num{font-size:36px;font-weight:800;color:#fff;margin-bottom:4px}
 .stat-card-label{font-size:13px;color:#606060;font-weight:500}
-
 .quote-block{background:rgba(255,255,255,0.02);border-left:2px solid rgba(255,255,255,0.15);border-radius:0 12px 12px 0;padding:20px 28px;margin:16px 0}
 .quote-text{font-size:17px;color:#b0b0b0;font-style:italic;line-height:1.7}
 .quote-source{font-size:13px;color:#505050;margin-top:8px}
-
 .evidence-row{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(255,255,255,0.02);border-radius:10px;margin:8px 0;border:1px solid rgba(255,255,255,0.04)}
 .evidence-title{font-size:15px;color:#d0d0d0;font-weight:500;flex:1}
 .evidence-stat{font-size:15px;color:#808080;font-weight:700;margin-left:20px;white-space:nowrap}
-
 .comment-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:20px 24px;margin:10px 0}
 .comment-text{font-size:16px;color:#c0c0c0;font-style:italic;line-height:1.6;margin-bottom:6px}
-.comment-likes{font-size:12px;color:#505050}
 .comment-context{font-size:12px;color:#505050;margin-top:4px}
-
 .comp-row{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.04)}
 .comp-name{font-size:16px;color:#d0d0d0;font-weight:600;width:140px}
 .comp-val{font-size:14px;color:#808080;width:100px;text-align:center}
 .comp-awe{font-size:14px;font-weight:600;width:180px;text-align:right}
 .comp-awe.no{color:#f87171}.comp-awe.partial{color:#fbbf24}.comp-awe.yes{color:#4ade80}
-
 .feature-list{list-style:none;padding:0}
 .feature-list li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:17px;color:#b0b0b0;display:flex;align-items:center;gap:12px}
 .feature-list li:last-child{border:none}
 .feature-dot{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0}
-
 .moat-layer{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px;margin:12px 0}
 .moat-num{font-size:13px;color:#505050;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
 .moat-name{font-size:20px;color:#fff;font-weight:700;margin-bottom:8px}
 .moat-desc{font-size:15px;color:#909090;line-height:1.7}
-
 .timeline-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .timeline-month{font-size:14px;color:#606060;font-weight:600;width:120px;flex-shrink:0}
 .timeline-desc{font-size:16px;color:#b0b0b0}
 .timeline-item.done .timeline-month{color:#4ade80}
 .timeline-item.done .timeline-desc{color:#d0d0d0}
-
 .insight-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px 28px;margin:20px 0}
 .insight-title{font-size:14px;color:#808080;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .insight-text{font-size:16px;color:#c0c0c0;line-height:1.8}
-
 .awe-type-badge{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px}
 .type-moral{background:rgba(251,191,36,0.1);color:#fbbf24;border:1px solid rgba(251,191,36,0.2)}
 .type-collective{background:rgba(139,92,246,0.1);color:#a78bfa;border:1px solid rgba(139,92,246,0.2)}
@@ -71,37 +58,31 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
 .type-music{background:rgba(244,114,182,0.1);color:#f472b6;border:1px solid rgba(244,114,182,0.2)}
 .type-epiphany{background:rgba(96,165,250,0.1);color:#60a5fa;border:1px solid rgba(96,165,250,0.2)}
 .type-life{background:rgba(252,165,165,0.1);color:#fca5a5;border:1px solid rgba(252,165,165,0.2)}
-
 .keltner-framework{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
 .framework-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;text-align:center}
 .framework-icon{font-size:28px;margin-bottom:8px}
 .framework-title{font-size:14px;color:#fff;font-weight:700;margin-bottom:4px}
 .framework-desc{font-size:12px;color:#707070;line-height:1.5}
-
 .meditation-insight{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
 .med-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:24px}
 .med-title{font-size:14px;font-weight:700;margin-bottom:12px}
-
 .cta-url{font-size:18px;color:#808080;margin-top:8px}
 .slide-dark{background:#000}.slide-subtle{background:#050505}
 .title-icon{font-size:48px;margin-bottom:24px}
 .title-main{font-size:clamp(56px,12vw,96px);font-weight:900;letter-spacing:-4px;margin-bottom:12px;color:#fff}
 .title-sub{font-size:clamp(20px,4vw,28px);font-weight:300;color:#606060;margin-bottom:40px}
 .title-meta{font-size:14px;color:#303030}
-
 .nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:8px}
 .nav-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.1);cursor:pointer;transition:all 0.3s}
 .nav-dot:hover{background:rgba(255,255,255,0.3)}
 .nav-dot.active{background:#fff;transform:scale(1.3)}
-
 @media(max-width:768px){.slide{padding:40px 20px}.stat-grid{grid-template-columns:1fr 1fr}.comp-row{flex-direction:column;gap:8px;align-items:flex-start}.evidence-row{flex-direction:column;gap:4px;align-items:flex-start}.evidence-stat{margin-left:0}.keltner-framework{grid-template-columns:1fr}.meditation-insight{grid-template-columns:1fr}.nav{display:none}}
 </style>
 </head>
 <body>
-
 <div class="nav" id="nav"></div>
 
-<!-- SLIDE 1: Title -->
+<!-- SLIDE 1 -->
 <div class="slide slide-dark" id="s1">
 <div class="slide-inner" style="text-align:center">
 <div class="title-icon">✦</div>
@@ -112,24 +93,17 @@ body{font-family:'Inter',sans-serif;background:#000;color:#fff}
 <div class="slide-num">01</div>
 </div>
 
-<!-- SLIDE 2: The Gap -->
+<!-- SLIDE 2 -->
 <div class="slide slide-subtle" id="s2">
 <div class="slide-inner">
 <div class="slide-label">The Opportunity</div>
 <div class="slide-title"><span>The Gap</span></div>
-<div class="slide-body" style="font-size:24px;line-height:1.8">
-<strong>Calm</strong> built a $2B company on calm.<br>
-<strong>Headspace</strong> built a $3B company on meditation.<br><br>
-The most therapeutic emotion in clinical psychology — <strong>awe</strong> — has <strong>zero products</strong> built around it.<br><br>
-Awe has <strong>stronger clinical evidence</strong> than meditation.<br>
-Awe requires <strong>zero effort</strong> from the user.<br>
-Awe works across <strong>every demographic</strong>.
-</div>
+<div class="slide-body" style="font-size:24px;line-height:1.8"><strong>Calm</strong> built a $2B company on calm.<br><strong>Headspace</strong> built a $3B company on meditation.<br><br>The most therapeutic emotion in clinical psychology — <strong>awe</strong> — has <strong>zero products</strong> built around it.<br><br>Awe has <strong>stronger clinical evidence</strong> than meditation.<br>Awe requires <strong>zero effort</strong> from the user.<br>Awe works across <strong>every demographic</strong>.</div>
 </div>
 <div class="slide-num">02</div>
 </div>
 
-<!-- SLIDE 3: The Science -->
+<!-- SLIDE 3 -->
 <div class="slide slide-dark" id="s3">
 <div class="slide-inner">
 <div class="slide-label">The Foundation</div>
@@ -137,8 +111,8 @@ Awe works across <strong>every demographic</strong>.
 <div class="slide-body"><strong>20 years of peer-reviewed research. UC Berkeley.</strong><br>Lead researcher: <strong>Dr. Dacher Keltner</strong> — the scientist who defined and measured awe.</div>
 <div class="stat-grid">
 <div class="stat-card"><div class="stat-card-num">↓ IL-6</div><div class="stat-card-label">Reduces inflammatory cytokines linked to chronic disease (Stellar et al., 2015)</div></div>
-<div class="stat-card"><div class="stat-card-num">↓ Self-Focus</div><div class="stat-card-label">Produces the "small self" effect — reduces anxious self-referential thinking</div></div>
-<div class="stat-card"><div class="stat-card-num">↑ Prosocial</div><div class="stat-card-label">Increases generosity, kindness, and cooperative behavior (Piff et al., 2015)</div></div>
+<div class="stat-card"><div class="stat-card-num">↓ Self-Focus</div><div class="stat-card-label">Produces the "small self" effect — reduces anxious self-referential thinking (Piff et al., 2015)</div></div>
+<div class="stat-card"><div class="stat-card-num">↑ Prosocial</div><div class="stat-card-label">Increases generosity, kindness, and cooperative behavior in 60 seconds</div></div>
 <div class="stat-card"><div class="stat-card-num">↑ Wellbeing</div><div class="stat-card-label">Reduces anxiety and promotes calm — conditions associated with improved sleep</div></div>
 </div>
 <div class="keltner-framework">
@@ -151,13 +125,13 @@ Awe works across <strong>every demographic</strong>.
 <div class="slide-num">03</div>
 </div>
 
-<!-- SLIDE 4: 8 Pathways -->
+<!-- SLIDE 4 -->
 <div class="slide slide-subtle" id="s4">
 <div class="slide-inner">
 <div class="slide-label">The Framework</div>
 <div class="slide-title"><span>8 Pathways to Awe</span></div>
 <div class="slide-body">Keltner's research identifies <strong>8 distinct triggers</strong> for awe. Each activates the same core response — vastness and accommodation — through a different door. The most viral content on the internet maps directly onto these pathways.</div>
-<div class="stat-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))">
+<div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
 <div class="stat-card"><div class="stat-card-num" style="font-size:24px">❤️</div><div class="stat-card-label" style="color:#fbbf24;font-weight:600">Moral Beauty</div><div style="font-size:11px;color:#606060;margin-top:4px">Human goodness, courage, sacrifice, compassion</div></div>
 <div class="stat-card"><div class="stat-card-num" style="font-size:24px">👥</div><div class="stat-card-label" style="color:#a78bfa;font-weight:600">Collective</div><div style="font-size:11px;color:#606060;margin-top:4px">Crowds, concerts, ceremonies, synchronized movement</div></div>
 <div class="stat-card"><div class="stat-card-num" style="font-size:24px">🌊</div><div class="stat-card-label" style="color:#34d399;font-weight:600">Nature</div><div style="font-size:11px;color:#606060;margin-top:4px">Mountains, oceans, storms, space, sunsets</div></div>
@@ -171,7 +145,7 @@ Awe works across <strong>every demographic</strong>.
 <div class="slide-num">04</div>
 </div>
 
-<!-- SLIDE 5: YouTube Evidence -->
+<!-- SLIDE 5 -->
 <div class="slide slide-dark" id="s5">
 <div class="slide-inner">
 <div class="slide-label">YouTube Evidence</div>
@@ -181,27 +155,26 @@ Awe works across <strong>every demographic</strong>.
 <div class="evidence-row"><div class="evidence-title">Live Performance — Rain, Song, Crowd</div><div class="evidence-stat">160M views</div><span class="awe-type-badge type-collective">Collective</span></div>
 <div class="evidence-row"><div class="evidence-title">Acts of Kindness Compilation</div><div class="evidence-stat">48M views</div><span class="awe-type-badge type-moral">Moral Beauty</span></div>
 <div class="evidence-row"><div class="evidence-title">Emotional Rewatch Compilation</div><div class="evidence-stat">182M views</div><span class="awe-type-badge type-music">Music</span></div>
-<div class="insight-box" style="margin-top:24px"><div class="insight-title">Key Insight</div><div class="insight-text"><strong>420M+ views across just 4 videos.</strong> Not a genre search. Not hundreds of clips. Four individual pieces of awe content spanning four different pathways. The demand exists at massive scale across every form of awe. What doesn't exist is a <strong>product</strong> designed to deliver it intentionally.</div></div>
+<div class="insight-box" style="margin-top:24px"><div class="insight-title">Key Insight</div><div class="insight-text"><strong>420M+ views across just 4 videos.</strong> Not a genre search. Four individual pieces of awe content spanning four different pathways. The demand exists at massive scale. What doesn't exist is a <strong>product</strong> designed to deliver it intentionally.</div></div>
 </div>
 <div class="slide-num">05</div>
 </div>
 
-<!-- SLIDE 6: YouTube Comments -->
+<!-- SLIDE 6 -->
 <div class="slide slide-subtle" id="s6">
 <div class="slide-inner">
 <div class="slide-label">In Their Own Words</div>
 <div class="slide-title"><span>What People Say</span></div>
 <div class="slide-body">Real comments describing <strong>real physiological responses</strong> — the same responses that Keltner's research measures in laboratory settings.</div>
-<div class="comment-card"><div class="comment-text">"There's something so special about this performance... the rain, the song, the crowd just living in the moment. I get goosebumps every time I watch this."</div><div class="comment-likes">36K likes</div><div class="comment-context">Collective Effervescence — 160M view video</div></div>
+<div class="comment-card"><div class="comment-text">"There's something so special about this performance... the rain, the song, the crowd just living in the moment. I get goosebumps every time I watch this."</div><div class="comment-context">Collective Effervescence — 160M view video · 36K likes</div></div>
 <div class="comment-card"><div class="comment-text">"22 y.o. russian man. I'm crying. Thanks to all kind people for making our world better"</div><div class="comment-context">Moral Beauty — 48M view video</div></div>
-<div class="comment-card"><div class="comment-text">"This is one of those videos that you just get the urge to rewatch every now and then."</div><div class="comment-likes">37K likes</div><div class="comment-context">Music — 182M view video</div></div>
-<div class="comment-card"><div class="comment-text">"Right now, there are people all over the world who are just like you. They're either lonely, they're missing somebody, they're depressed... And right now, they are sitting here reading these words, and I'm writing this for you so you don't feel alone anymore."</div><div class="comment-likes">4.9K likes</div><div class="comment-context">Nature — 30M view video</div></div>
-<div class="insight-box"><div class="insight-title">What This Proves</div><div class="insight-text">People already experience <strong>real awe</strong> from screen content across every pathway — moral beauty, collective moments, music, and nature. They describe goosebumps, tears, and the urge to rewatch. They're <strong>already doing this</strong>. Nobody has built a product around it.</div></div>
+<div class="comment-card"><div class="comment-text">"This is one of those videos that you just get the urge to rewatch every now and then."</div><div class="comment-context">Music — 182M view video · 37K likes</div></div>
+<div class="comment-card"><div class="comment-text">"Right now, there are people all over the world who are just like you. They're either lonely, they're missing somebody, they're depressed... And right now, they are sitting here reading these words, and I'm writing this for you so you don't feel alone anymore."</div><div class="comment-context">Nature — 30M view video · 4.9K likes</div></div>
 </div>
 <div class="slide-num">06</div>
 </div>
 
-<!-- SLIDE 7: TikTok -->
+<!-- SLIDE 7 -->
 <div class="slide slide-dark" id="s7">
 <div class="slide-inner">
 <div class="slide-label">TikTok Evidence</div>
@@ -217,85 +190,85 @@ Awe works across <strong>every demographic</strong>.
 <div class="stat-card"><div class="stat-card-num">72M</div><div class="stat-card-label">Combined likes</div></div>
 <div class="stat-card"><div class="stat-card-num">12.6%</div><div class="stat-card-label">Like-to-view ratio — significantly above platform average</div></div>
 </div>
-<div class="insight-box"><div class="insight-title">Why This Matters</div><div class="insight-text">Awe content doesn't just get watched — it gets <strong>saved, shared, and rewatched</strong> at rates far above typical content. This engagement pattern spans moral beauty, nature, AND collective experiences. It's the behavioral signature of content people would <strong>pay for</strong>.</div></div>
 </div>
 <div class="slide-num">07</div>
 </div>
 
-<!-- SLIDE 8: Viral = Awe -->
+<!-- SLIDE 8 -->
 <div class="slide slide-subtle" id="s8">
 <div class="slide-inner">
 <div class="slide-label">The Insight</div>
 <div class="slide-title"><span>Viral Content IS Awe</span></div>
-<div class="slide-body" style="font-size:20px">The most shared content on the internet maps <strong>directly</strong> onto Keltner's 8 awe pathways. The platforms discovered this accidentally. We're doing it <strong>intentionally</strong>.</div>
+<div class="slide-body" style="font-size:20px">The most shared content on the internet maps <strong>directly</strong> onto Keltner's 8 awe pathways. The platforms discovered this accidentally. This product does it <strong>intentionally</strong>.</div>
 <div class="stat-grid" style="grid-template-columns:1fr 1fr">
 <div class="stat-card" style="text-align:left;padding:20px 24px"><div style="font-size:14px;color:#fbbf24;font-weight:600;margin-bottom:12px">WHAT GOES VIRAL</div><div style="font-size:14px;color:#909090;line-height:2">"Faith in humanity restored"<br>Stadium singing videos<br>Nature timelapses<br>"This gave me chills"<br>Mind-blowing facts<br>Reunions and kindness</div></div>
 <div class="stat-card" style="text-align:left;padding:20px 24px"><div style="font-size:14px;color:#fff;font-weight:600;margin-bottom:12px">WHAT AWE RESEARCH MEASURES</div><div style="font-size:14px;color:#909090;line-height:2">Moral beauty response<br>Collective effervescence<br>Vastness + accommodation<br>Musical frisson<br>Intellectual epiphany<br>Prosocial behavior trigger</div></div>
 </div>
-<div class="insight-box"><div class="insight-title">The Opportunity</div><div class="insight-text">Every platform's algorithm has accidentally discovered that <strong>awe is the most engaging emotion</strong>. But they deliver it randomly, surrounded by ads, mixed with rage bait. We deliver it <strong>intentionally, purely, and personally</strong> — backed by the science that explains why it works.</div></div>
+<div class="insight-box"><div class="insight-title">The Opportunity</div><div class="insight-text">Every platform's algorithm has accidentally discovered that <strong>awe is the most engaging emotion</strong>. But they deliver it randomly, surrounded by ads, mixed with rage bait. This product delivers it <strong>intentionally, purely, and personally</strong> — backed by the science that explains why it works.</div></div>
 </div>
 <div class="slide-num">08</div>
 </div>
 
-<!-- SLIDE 9: Survey Results -->
+<!-- SLIDE 9 -->
 <div class="slide slide-dark" id="s9">
 <div class="slide-inner">
-<div class="slide-label">Primary Research — 35 Respondents</div>
+<div class="slide-label">Primary Research — 104 Respondents</div>
 <div class="slide-title"><span>97% Already Feel Awe on Screens</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="stat-card-num">97%</div><div class="stat-card-label">Have experienced goosebumps, chills, or tears from a video</div></div>
-<div class="stat-card"><div class="stat-card-num">75%</div><div class="stat-card-label">Would definitely or most likely try a nightly awe app</div></div>
-<div class="stat-card"><div class="stat-card-num">46%</div><div class="stat-card-label">Said "I would FOR SURE try it"</div></div>
-<div class="stat-card"><div class="stat-card-num">#1</div><div class="stat-card-label">Most selected: Humans being kind to strangers</div></div>
+<div class="stat-card"><div class="stat-card-num">63%</div><div class="stat-card-label">Would definitely or most likely try a nightly awe app</div></div>
+<div class="stat-card"><div class="stat-card-num">85%</div><div class="stat-card-label">Showed positive interest (including "maybe")</div></div>
+<div class="stat-card"><div class="stat-card-num">#1</div><div class="stat-card-label">Most wanted content: Humans being kind to strangers</div></div>
 </div>
 <div class="slide-body" style="margin-top:16px"><strong>What moves people most deeply — across all pathways:</strong></div>
-<div class="evidence-row"><div class="evidence-title">Humans being kind to strangers</div><div class="evidence-stat">71% selected</div><span class="awe-type-badge type-moral">Moral Beauty</span></div>
-<div class="evidence-row"><div class="evidence-title">Stories of overcoming impossible odds</div><div class="evidence-stat">60% selected</div><span class="awe-type-badge type-moral">Moral Beauty</span></div>
-<div class="evidence-row"><div class="evidence-title">Powerful music performances</div><div class="evidence-stat">49% selected</div><span class="awe-type-badge type-music">Music</span></div>
-<div class="evidence-row"><div class="evidence-title">Nature — oceans, mountains, storms, stars</div><div class="evidence-stat">40% selected</div><span class="awe-type-badge type-nature">Nature</span></div>
-<div class="evidence-row"><div class="evidence-title">Births, deaths, proposals</div><div class="evidence-stat">31% selected</div><span class="awe-type-badge type-life">Life & Death</span></div>
-<div class="evidence-row"><div class="evidence-title">Facts that changed my perspective</div><div class="evidence-stat">31% selected</div><span class="awe-type-badge type-epiphany">Epiphany</span></div>
-<div class="evidence-row"><div class="evidence-title">Large crowds moving or singing together</div><div class="evidence-stat">23% selected</div><span class="awe-type-badge type-collective">Collective</span></div>
-<div class="insight-box" style="margin-top:24px"><div class="insight-title">Key Finding</div><div class="insight-text">People experience awe across <strong>every pathway</strong> — from moral beauty and music to nature and epiphanies. While moral beauty leads, <strong>no single pathway dominates exclusively</strong>. This validates the multi-pathway approach: a product that serves all forms of awe reaches the broadest possible audience.</div></div>
+<div class="evidence-row"><div class="evidence-title">Humans being kind to strangers</div><div class="evidence-stat">73.1%</div><span class="awe-type-badge type-moral">Moral Beauty</span></div>
+<div class="evidence-row"><div class="evidence-title">Stories of overcoming impossible odds</div><div class="evidence-stat">62.5%</div><span class="awe-type-badge type-moral">Moral Beauty</span></div>
+<div class="evidence-row"><div class="evidence-title">Powerful music performances</div><div class="evidence-stat">42.3%</div><span class="awe-type-badge type-music">Music</span></div>
+<div class="evidence-row"><div class="evidence-title">Births, deaths, proposals</div><div class="evidence-stat">34.6%</div><span class="awe-type-badge type-life">Life & Death</span></div>
+<div class="evidence-row"><div class="evidence-title">Facts that changed my perspective</div><div class="evidence-stat">25%</div><span class="awe-type-badge type-epiphany">Epiphany</span></div>
+<div class="evidence-row"><div class="evidence-title">Nature — oceans, mountains, storms, stars</div><div class="evidence-stat">23.1%</div><span class="awe-type-badge type-nature">Nature</span></div>
+<div class="evidence-row"><div class="evidence-title">Large crowds moving or singing together</div><div class="evidence-stat">22.1%</div><span class="awe-type-badge type-collective">Collective</span></div>
+<div class="evidence-row"><div class="evidence-title">Space and the universe</div><div class="evidence-stat">15.4%</div><span class="awe-type-badge type-nature">Nature / Vastness</span></div>
+<div class="insight-box" style="margin-top:24px"><div class="insight-title">Key Finding</div><div class="insight-text">People experience awe across <strong>every pathway</strong> — from moral beauty and music to nature and epiphanies. While moral beauty leads, <strong>no single pathway dominates exclusively</strong>. A product serving all forms of awe reaches the broadest possible audience. These findings held consistent from n=35 through n=104.</div></div>
 </div>
 <div class="slide-num">09</div>
 </div>
 
-<!-- SLIDE 10: What They Said -->
+<!-- SLIDE 10 -->
 <div class="slide slide-subtle" id="s10">
 <div class="slide-inner">
 <div class="slide-label">In Their Own Words</div>
 <div class="slide-title"><span>What Moves People</span></div>
-<div class="slide-body">We asked: <strong>"Think of the LAST time a video gave you goosebumps or tears. What was it about?"</strong></div>
+<div class="slide-body">We asked 104 people: <strong>"Think of the LAST time a video gave you goosebumps or tears. What was it about?"</strong></div>
 <div class="comment-card"><div class="comment-text">"A black girl who found out she was being adopted by her white foster parents and she cried."</div><div class="comment-context">Respondent, 55+ · Moral Beauty · "I would FOR SURE try it"</div></div>
 <div class="comment-card"><div class="comment-text">"A young poor girl who dreamed to become a professional athlete. She woke up every morning to train before school to try and create a life where she could one day take care of her family."</div><div class="comment-context">Respondent, 16-24 · Moral Beauty · "I would MOST LIKELY try it"</div></div>
-<div class="comment-card"><div class="comment-text">"A guy that helps random people in need that are going through hard times. He helps them by whatever their needs are. Gets them a home, gets them a car."</div><div class="comment-context">Respondent, 16-24 · Moral Beauty · "I would FOR SURE try it"</div></div>
-<div class="comment-card"><div class="comment-text">"Commercial for adopting foster kids"</div><div class="comment-context">Respondent, 45-54 · Moral Beauty · "I would FOR SURE try it"</div></div>
+<div class="comment-card"><div class="comment-text">"Overcoming the death of a loved one"</div><div class="comment-context">Respondent · Life & Death</div></div>
+<div class="comment-card"><div class="comment-text">"Kindness in our everyday lives that has ripple effects"</div><div class="comment-context">Respondent · Moral Beauty</div></div>
+<div class="comment-card"><div class="comment-text">"Divorced mom sending a voicemail to her kid"</div><div class="comment-context">Respondent · Life & Death · Moral Beauty</div></div>
 <div class="comment-card"><div class="comment-text">"TikTok hope core — people being kind to strangers"</div><div class="comment-context">Respondent, 16-24 · Moral Beauty · "I would FOR SURE try it"</div></div>
-<div class="comment-card"><div class="comment-text">"End of Interstellar"</div><div class="comment-context">Respondent, 16-24 · Nature / Epiphany · "I would FOR SURE try it"</div></div>
-<div class="comment-card"><div class="comment-text">"Video of lightning in a volcano"</div><div class="comment-context">Respondent, 16-24 · Nature · "I would MOST LIKELY try it"</div></div>
-<div class="comment-card"><div class="comment-text">"Human components under a microscope"</div><div class="comment-context">Respondent, 16-24 · Epiphany · "I would MOST LIKELY try it"</div></div>
-<div class="insight-box"><div class="insight-title">Pattern</div><div class="insight-text">Every response maps to Keltner's awe pathways — moral beauty, nature, epiphany, music. People are already experiencing awe on their phones <strong>across every pathway</strong>. They just don't have a product designed to deliver it intentionally.</div></div>
+<div class="comment-card"><div class="comment-text">"Animals being mistreated."</div><div class="comment-context">Respondent · Moral Beauty (injustice → compassion response)</div></div>
+<div class="comment-card"><div class="comment-text">"Video reminiscing about early highschool/middle school"</div><div class="comment-context">Respondent · Life & Death (nostalgia)</div></div>
+<div class="insight-box"><div class="insight-title">Pattern</div><div class="insight-text">Every response maps to Keltner's awe pathways. The dominant pattern across 104 respondents: <strong>real human stories</strong> — kindness, resilience, connection, loss, and love. People are already experiencing awe on their phones <strong>across every pathway</strong>. They just don't have a product designed to deliver it intentionally.</div></div>
 </div>
 <div class="slide-num">10</div>
 </div>
 
-<!-- SLIDE 11: Meditation Gap -->
+<!-- SLIDE 11 -->
 <div class="slide slide-dark" id="s11">
 <div class="slide-inner">
 <div class="slide-label">The Meditation Problem</div>
 <div class="slide-title"><span>Why Calm Isn't Enough</span></div>
-<div class="slide-body" style="font-size:20px">49% of our respondents have tried meditation apps. <strong>Most quit.</strong></div>
+<div class="slide-body" style="font-size:20px">64% of respondents have tried or want to try wellness apps. <strong>Most who tried one quit.</strong></div>
 <div class="meditation-insight">
-<div class="med-card"><div class="med-title" style="color:#f87171">Why People Quit Meditation Apps</div><div style="font-size:14px;color:#909090;line-height:2">"Forgot about it" — most common<br>"Didn't feel any different"<br>"Too much effort"<br>"Got bored"</div></div>
-<div class="med-card"><div class="med-title" style="color:#4ade80">Why Awe Is Different</div><div style="font-size:14px;color:#909090;line-height:2">Zero effort — you just watch<br>Immediate emotional response<br>Different content every session<br>Works even if you've never meditated</div></div>
+<div class="med-card"><div class="med-title" style="color:#f87171">Why People Quit Meditation Apps (58 responses)</div><div style="font-size:14px;color:#909090;line-height:2">"Forgot about it" — 24.1%<br>"Didn't feel any different" — 20.7%<br>"Got bored" — 15.5%<br>"Got out of habit"<br>"Too much effort"</div></div>
+<div class="med-card"><div class="med-title" style="color:#4ade80">Why Awe Is Different</div><div style="font-size:14px;color:#909090;line-height:2">Zero effort — you just watch<br>Immediate emotional response<br>Different content every session<br>Works even if you've never meditated<br>97% already experience it from video</div></div>
 </div>
-<div class="insight-box"><div class="insight-title">The Positioning</div><div class="insight-text">Meditation asks you to <strong>do something hard</strong> and promises results after weeks. Awe asks you to <strong>do nothing</strong> and produces a measurable response in <strong>90 seconds</strong>. This is why <strong>97% of people already experience awe from videos</strong> but only 20% stick with meditation apps.</div></div>
+<div class="insight-box"><div class="insight-title">The Positioning</div><div class="insight-text">Meditation asks you to <strong>do something hard</strong> and promises results after weeks. Awe asks you to <strong>do nothing</strong> and produces a measurable response in <strong>60 seconds</strong> (Piff et al., 2015). This is why <strong>97% of people already experience awe from videos</strong> but most quit meditation apps within weeks.</div></div>
 </div>
 <div class="slide-num">11</div>
 </div>
 
-<!-- SLIDE 12: Competition -->
+<!-- SLIDE 12 -->
 <div class="slide slide-subtle" id="s12">
 <div class="slide-inner">
 <div class="slide-label">Competitive Landscape</div>
@@ -309,44 +282,43 @@ Awe works across <strong>every demographic</strong>.
 <div class="comp-row"><div class="comp-name">TikTok</div><div class="comp-val">—</div><div class="comp-awe partial">Accidental. Mixed with everything else.</div></div>
 <div class="comp-row" style="background:rgba(255,255,255,0.03);border-radius:8px;margin-top:12px"><div class="comp-name" style="color:#fff;font-weight:700">Awe</div><div class="comp-val" style="color:#fff">Building</div><div class="comp-awe yes">Science-backed. Phone-first. Personalized. Pure.</div></div>
 </div>
-<div class="insight-box" style="margin-top:24px"><div class="insight-title">Why TRIPP Validates Us</div><div class="insight-text">TRIPP raised $11M proving demand for emotional wellness experiences. But they're VR-only (tiny market), use abstract CGI (not real human content), and have no published science. We're building what TRIPP should have built — for <strong>phones</strong> (3.5B users vs 20M VR headsets).</div></div>
 </div>
 <div class="slide-num">12</div>
 </div>
 
-<!-- SLIDE 13: Product -->
+<!-- SLIDE 13 -->
 <div class="slide slide-dark" id="s13">
 <div class="slide-inner">
 <div class="slide-label">The Product</div>
 <div class="slide-title"><span>The Opposite of Doomscrolling</span></div>
 <div class="slide-body" style="font-size:20px;margin-bottom:32px">A subscription app delivering scientifically-calibrated awe experiences across every pathway. Not meditation. Not breathing. <strong>You just watch and listen.</strong></div>
 <ul class="feature-list">
-<li><span class="feature-dot" style="background:#fbbf24"></span> <strong>Moral beauty</strong> — real human kindness, courage, sacrifice</li>
-<li><span class="feature-dot" style="background:#a78bfa"></span> <strong>Collective moments</strong> — crowds, concerts, shared human experience</li>
-<li><span class="feature-dot" style="background:#34d399"></span> <strong>Nature</strong> — vast scenery, storms, oceans, space</li>
-<li><span class="feature-dot" style="background:#60a5fa"></span> <strong>Cosmic perspective</strong> — scale of the universe, deep time</li>
-<li><span class="feature-dot" style="background:#f472b6"></span> <strong>Music</strong> — engineered frisson, crescendos, choirs</li>
-<li><span class="feature-dot" style="background:#fca5a5"></span> <strong>Life moments</strong> — births, reunions, human milestones</li>
-<li><span class="feature-dot"></span> <strong>Personalized</strong> to what produces awe in YOU specifically</li>
-<li><span class="feature-dot"></span> <strong>90 seconds to 45 minutes</strong> — micro-dose to deep immersion</li>
+<li><span class="feature-dot" style="background:#fbbf24"></span><strong>Moral beauty</strong> — real human kindness, courage, sacrifice</li>
+<li><span class="feature-dot" style="background:#a78bfa"></span><strong>Collective moments</strong> — crowds, concerts, shared human experience</li>
+<li><span class="feature-dot" style="background:#34d399"></span><strong>Nature</strong> — vast scenery, storms, oceans, space</li>
+<li><span class="feature-dot" style="background:#60a5fa"></span><strong>Cosmic perspective</strong> — scale of the universe, deep time</li>
+<li><span class="feature-dot" style="background:#f472b6"></span><strong>Music</strong> — engineered frisson, crescendos, choirs</li>
+<li><span class="feature-dot" style="background:#fca5a5"></span><strong>Life moments</strong> — births, reunions, human milestones</li>
+<li><span class="feature-dot"></span><strong>Personalized</strong> to what produces awe in YOU specifically</li>
+<li><span class="feature-dot"></span><strong>90 seconds to 45 minutes</strong> — micro-dose to deep immersion</li>
 </ul>
 </div>
 <div class="slide-num">13</div>
 </div>
 
-<!-- SLIDE 14: Moat -->
+<!-- SLIDE 14 -->
 <div class="slide slide-subtle" id="s14">
 <div class="slide-inner">
 <div class="slide-label">Defensibility</div>
 <div class="slide-title"><span>Three-Layer Moat</span></div>
-<div class="moat-layer"><div class="moat-num">Layer 1</div><div class="moat-name">Scientific Legitimacy</div><div class="moat-desc">Built with the researchers who <strong>discovered</strong> the science of awe. Co-branded clinical studies. Published in peer-reviewed journals. This locks out wellness-woo competitors and makes enterprise and healthcare sales legitimate. <strong>Calm never had this.</strong></div></div>
+<div class="moat-layer"><div class="moat-num">Layer 1</div><div class="moat-name">Scientific Legitimacy</div><div class="moat-desc">Built with the researchers who <strong>discovered</strong> the science of awe. Co-branded clinical studies. Published in peer-reviewed journals. This locks out wellness-woo competitors. <strong>Calm never had this.</strong></div></div>
 <div class="moat-layer"><div class="moat-num">Layer 2</div><div class="moat-name">Personalization Data</div><div class="moat-desc">The app learns what produces awe in <strong>YOU</strong> specifically — across all 8 pathways. Every session makes the next session better. The longer users stay, the harder they are to replace.</div></div>
-<div class="moat-layer"><div class="moat-num">Layer 3</div><div class="moat-name">Biometric Dataset</div><div class="moat-desc">Camera-based HRV, pupil dilation, micro-expressions during sessions. The system learns what produces awe in you and adapts in real-time. We will own the <strong>only training corpus</strong> of what-produces-awe-in-whom. <strong>Future entrants can't catch up.</strong></div></div>
+<div class="moat-layer"><div class="moat-num">Layer 3</div><div class="moat-name">Biometric Dataset</div><div class="moat-desc">Camera-based HRV, pupil dilation, micro-expressions during sessions. The system learns what produces awe in you and adapts in real-time. The <strong>only training corpus</strong> of what-produces-awe-in-whom. <strong>Future entrants can't catch up.</strong></div></div>
 </div>
 <div class="slide-num">14</div>
 </div>
 
-<!-- SLIDE 15: Traction -->
+<!-- SLIDE 15 -->
 <div class="slide slide-dark" id="s15">
 <div class="slide-inner">
 <div class="slide-label">Early Signal</div>
@@ -354,54 +326,54 @@ Awe works across <strong>every demographic</strong>.
 <div class="slide-body">All evidence gathered in an <strong>initial research sprint</strong>. The speed of data collection reflects the depth of existing demand — the signals were everywhere, waiting to be measured.</div>
 <div class="stat-grid">
 <div class="stat-card"><div class="stat-card-num">993M+</div><div class="stat-card-label">Views of awe content analyzed</div></div>
-<div class="stat-card"><div class="stat-card-num">35</div><div class="stat-card-label">Survey responses collected</div></div>
+<div class="stat-card"><div class="stat-card-num">104</div><div class="stat-card-label">Survey responses collected</div></div>
 <div class="stat-card"><div class="stat-card-num">97%</div><div class="stat-card-label">Already experience awe on screens</div></div>
-<div class="stat-card"><div class="stat-card-num">75%</div><div class="stat-card-label">Would try the app</div></div>
+<div class="stat-card"><div class="stat-card-num">63%</div><div class="stat-card-label">Would try the app</div></div>
 </div>
-<div class="insight-box"><div class="insight-title">What This Means</div><div class="insight-text">We didn't have to look hard for evidence. <strong>The demand was already there</strong> — in the view counts, in the comments, in the survey responses. Nearly a billion views of awe content exist across platforms, spanning every pathway. 97% of people have already experienced it. The only thing missing is a product designed to deliver it intentionally.</div></div>
+<div class="insight-box"><div class="insight-title">What This Means</div><div class="insight-text">The demand was already there — in the view counts, in the comments, in the survey responses. Nearly a billion views of awe content exist across platforms. <strong>97% of 104 people</strong> have already experienced it. Findings held consistent from n=35 through n=104. The only thing missing is a product designed to deliver it intentionally.</div></div>
 <div class="slide-body" style="margin-top:24px;text-align:center;font-size:20px"><strong>feelawe.com</strong></div>
 </div>
 <div class="slide-num">15</div>
 </div>
 
-<!-- SLIDE 16: The Ask -->
+<!-- SLIDE 16 -->
 <div class="slide slide-subtle" id="s16">
 <div class="slide-inner">
 <div class="slide-label">Partnership</div>
 <div class="slide-title"><span>The Ask</span></div>
 <div class="slide-body" style="font-size:20px">Looking for a scientific partner to bring rigor to what the data already shows works:</div>
 <ul class="feature-list" style="margin:24px 0">
-<li><span class="feature-dot"></span> Co-design the awe stimulus protocols across all pathways</li>
-<li><span class="feature-dot"></span> Run a validation study through your lab</li>
-<li><span class="feature-dot"></span> Serve as scientific advisor and public voice</li>
+<li><span class="feature-dot"></span>Co-design the awe stimulus protocols across all pathways</li>
+<li><span class="feature-dot"></span>Run a validation study through your lab</li>
+<li><span class="feature-dot"></span>Serve as scientific advisor and public voice</li>
 </ul>
-<div class="slide-body" style="font-size:20px;margin-top:32px"><strong>We're offering:</strong></div>
+<div class="slide-body" style="font-size:20px;margin-top:32px"><strong>Offering:</strong></div>
 <ul class="feature-list">
-<li><span class="feature-dot"></span> Funded research partnership</li>
-<li><span class="feature-dot"></span> Equity in the company</li>
-<li><span class="feature-dot"></span> Co-authorship on all publications</li>
-<li><span class="feature-dot"></span> Your name on the product</li>
+<li><span class="feature-dot"></span>Funded research partnership</li>
+<li><span class="feature-dot"></span>Equity in the company</li>
+<li><span class="feature-dot"></span>Co-authorship on all publications</li>
+<li><span class="feature-dot"></span>Your name on the product</li>
 </ul>
-<div class="insight-box" style="margin-top:24px"><div class="insight-text" style="color:#909090">The science is done. The demand is proven across every awe pathway. What's missing is the product — and the scientific credibility to make it legitimate. We want to build this WITH you, not just cite your work.</div></div>
+<div class="insight-box" style="margin-top:24px"><div class="insight-text" style="color:#909090">The science is done. The demand is proven across every awe pathway with 104 respondents. What's missing is the product — and the scientific credibility to make it legitimate. The goal is to build this WITH you, not just cite your work.</div></div>
 </div>
 <div class="slide-num">16</div>
 </div>
 
-<!-- SLIDE 17: Roadmap -->
+<!-- SLIDE 17 -->
 <div class="slide slide-dark" id="s17">
 <div class="slide-inner">
 <div class="slide-label">Roadmap</div>
 <div class="slide-title"><span>What's Next</span></div>
 <div style="margin-top:24px">
-<div class="timeline-item done"><div class="timeline-month">Phase 1 ✓</div><div class="timeline-desc"><strong>Evidence gathering</strong> — 993M views analyzed across all awe pathways, 35 survey responses, 20 direct conversations. Completed in initial research sprint.</div></div>
+<div class="timeline-item done"><div class="timeline-month">Phase 1 ✓</div><div class="timeline-desc"><strong>Evidence gathering</strong> — 993M views analyzed, 104 survey responses, 20+ direct conversations. Completed in initial research sprint.</div></div>
 <div class="timeline-item"><div class="timeline-month">Phase 2</div><div class="timeline-desc"><strong>Scientific partnership</strong> — Research advisor onboarded. Study protocol designed. Stimulus methodology co-developed across all 8 pathways.</div></div>
-<div class="timeline-item"><div class="timeline-month">Phase 3</div><div class="timeline-desc"><strong>Prototype + validation</strong> — First awe sequences produced spanning moral beauty, collective, nature, music, and epiphany pathways. Tested with real users. Retention and clinical signals measured.</div></div>
+<div class="timeline-item"><div class="timeline-month">Phase 3</div><div class="timeline-desc"><strong>Prototype + validation</strong> — First awe sequences produced and tested with real users. Retention and clinical signals measured.</div></div>
 </div>
 </div>
 <div class="slide-num">17</div>
 </div>
 
-<!-- SLIDE 18: Contact -->
+<!-- SLIDE 18 -->
 <div class="slide slide-subtle" id="s18">
 <div class="slide-inner" style="text-align:center">
 <div class="title-icon">✦</div>
@@ -411,7 +383,7 @@ Awe works across <strong>every demographic</strong>.
 <div class="quote-text">"Awe is the feeling of being in the presence of something vast that transcends your understanding of the world."</div>
 <div class="quote-source">— Dr. Dacher Keltner, UC Berkeley</div>
 </div>
-<div style="margin-top:48px;font-size:14px;color:#303030">993M+ views analyzed · 97% already feel awe on screens · 75% would try the app<br>8 pathways. Every demographic. Zero products.<br><br><strong style="color:#606060">The opposite of doomscrolling.</strong></div>
+<div style="margin-top:48px;font-size:14px;color:#303030">993M+ views analyzed · 104 respondents · 97% already feel awe on screens<br>8 pathways. Every demographic. Zero products.<br><br><strong style="color:#606060">The opposite of doomscrolling.</strong></div>
 </div>
 <div class="slide-num">18</div>
 </div>
@@ -421,6 +393,5 @@ var slides=document.querySelectorAll('.slide');var nav=document.getElementById('
 slides.forEach(function(s,i){var dot=document.createElement('div');dot.className='nav-dot';dot.onclick=function(){s.scrollIntoView({behavior:'smooth'})};nav.appendChild(dot)});
 window.addEventListener('scroll',function(){var dots=document.querySelectorAll('.nav-dot');var sp=window.scrollY+window.innerHeight/2;slides.forEach(function(s,i){if(sp>=s.offsetTop&&sp<s.offsetTop+s.offsetHeight){dots.forEach(function(d){d.classList.remove('active')});if(dots[i])dots[i].classList.add('active')}})});
 </script>
-
 </body>
 </html>
